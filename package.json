@@ -1,0 +1,16 @@
+{
+  "name": "img",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss ./css/style.css -w",
+    "devserver": "live-server --host=127.0.0.1 --port=8081",
+    "start": "npm-run-all --parallel watch:sass devserver"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "node-sass": "^4.10.0",
+    "npm-run-all": "^4.1.3"
+  }
+}

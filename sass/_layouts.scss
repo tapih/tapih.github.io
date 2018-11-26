@@ -1,0 +1,125 @@
+.header-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    padding: 0 8rem;
+    transition: background-color .2s;
+    color: white;
+    &--waypoint-on {
+        color: $color-gray-1;
+        background-color: rgba(white, 0.4);
+        border-bottom: 1px solid $color-gray-4;
+    }
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    color: inherit;
+    &__item {
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+            margin-right: 3rem;
+        }
+        color: inherit;
+        &>a:link,
+        &>a:visited {
+            display: inline-block;
+            position: relative;
+            height: 7rem;
+            line-height: 7rem;
+            color: inherit;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.2s;
+        }
+        &>a:hover,
+        &>a:active {
+            color: $color-primary;
+        }
+        &>a:link::after,
+        &>a:visited::after {
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background-color: $color-primary;
+            transform: scaleX(0);
+            transition: transform 0.2s ease-out;
+            content: '';
+        }
+        &>a:hover::after,
+        &>a:active::after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.go-to-top {
+    display: none;
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    &--waypoint-on {
+        display: block;
+    }
+}
+
+.hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to right, rgba(black, 0.5), rgba(black, 0.5)), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.works-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 105vh;
+    padding-top: 8rem;
+}
+
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 105vh;
+    padding: 8rem 0 10rem;
+}
+
+.skills-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 105vh;
+    padding-top: 8rem;
+    background-color: $color-secondary;
+}
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 8rem 20rem 3rem;
+    background-color: $color-secondary;
+    color: white;
+}

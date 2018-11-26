@@ -1,0 +1,8 @@
+// importantはこのファイルでだけ使う
+.u-vertical-shadow {
+    box-shadow: 0 1px 4px rgba($color-black, 0.2) !important;
+}
+
+.u-horizontal-shadow {
+    box-shadow: 1px 0 4px rgba($color-black, 0.2) !important;
+}

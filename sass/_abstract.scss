@@ -1,0 +1,23 @@
+@mixin round-img-box($box-square: 12rem, $img-width: 170%) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $box-square;
+    height: $box-square;
+    border-radius: 50%;
+    overflow: hidden;
+    &>img {
+        width: $img-width;
+    }
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

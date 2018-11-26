@@ -1,0 +1,32 @@
+html {
+    font-size: 62.5%;
+    // chromeとfirefoxだけだけどなくても困らないので使う
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Roboto Condensed", sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+img {
+    vertical-align: top;
+}
