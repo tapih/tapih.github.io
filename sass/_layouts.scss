@@ -4,7 +4,7 @@
     align-items: center;
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: $z-highest;
     width: 100%;
     padding: 0 8rem;
     transition: background-color .2s;
@@ -82,36 +82,46 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(to right, rgba(black, 0.5), rgba(black, 0.5)), url(../img/hero.jpg);
+    width: 100%; // background-image: linear-gradient(to right, rgba(black, 0.5), rgba(black, 0.5)), url(../img/hero.jpg);
+    background-image: linear-gradient(to bottom, rgba(black, 0.5), rgba(black, 0.5)), url(../img/hero-imgs/hero1-min.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-}
-
-.works-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 105vh;
-    padding-top: 8rem;
 }
 
 .about-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 105vh;
-    padding: 8rem 0 10rem;
+    height: $section-height;
+    padding-top: 8rem;
+    padding-bottom: 10rem;
 }
 
 .skills-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 105vh;
+    height: $section-height;
     padding-top: 8rem;
-    background-color: $color-secondary;
+    padding-bottom: 10rem;
+    background-color: $color-tertiary;
+}
+
+.awards-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding-top: 8rem;
+}
+
+.works-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: $section-height;
+    padding-top: 8rem;
 }
 
 .footer-wrapper {
@@ -119,7 +129,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    padding: 8rem 20rem 3rem;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
     background-color: $color-secondary;
     color: white;
 }

@@ -1,0 +1,4 @@
+POST http://127.0.0.1:8081/mailto.php
+content-type: application/x-www-form-urlencoded
+
+name=tapi&email=h.muraoka714@gmail.com&message=tapitapi&mailform_token=hoge
