@@ -34,7 +34,7 @@
         margin-bottom: 0.5rem;
         font-size: 3.2rem;
         font-weight: 300;
-        & > span {
+        &>span {
             margin-left: 1rem;
             font-size: 2rem;
         }
@@ -43,7 +43,7 @@
         margin-bottom: 14rem;
         word-break: break-all;
         hyphens: auto;
-        & > p {
+        &>p {
             margin-bottom: 0.2rem;
         }
     }
@@ -56,12 +56,157 @@
     }
     &__img {
         height: 100%;
+        background: url(../img/self-min.jpg) bottom right no-repeat;
+        background-size: contain;
         background-attachment: fixed;
-        background-image: url(../img/self-min.jpg);
-        background-size: 45% auto;
-        background-position: bottom right;
-        background-repeat: no-repeat;
         transform: skewX(15deg) translateX(-15rem);
+    }
+}
+
+/* card */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 4rem;
+    box-shadow: 0 2px 4px 2px rgba(black, 0.2);
+    border-radius: 1px;
+    background-color: white;
+    &__pie {
+        margin-bottom: 4rem;
+    }
+    &__heading {
+        font-size: 2.8rem;
+        margin-bottom: 3rem;
+    }
+    &__description {
+        width: 100%;
+    }
+    &__detail {
+        margin-bottom: 2rem;
+    }
+}
+
+// carousel
+.swiper-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 300%;
+    transition: transform .5s ease-in-out;
+}
+
+.swiper-slide {
+    margin: 0 2rem;
+}
+
+.swiper-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    outline: none;
+    &__prev {
+        width: 5rem;
+        height: 5rem;
+        border-right: 2.5rem solid $color-primary;
+        border-left: 2.5rem solid transparent;
+        border-top: 2.5rem solid transparent;
+        border-bottom: 2.5rem solid transparent;
+        outline: none;
+        background-color: transparent;
+        transition: opacity .2s;
+        opacity: .8;
+        cursor: pointer;
+        &--disabled {
+            opacity: 0;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &__next {
+        width: 5rem;
+        height: 5rem;
+        border-right: 2.5rem solid transparent;
+        border-left: 2.5rem solid $color-primary;
+        border-top: 2.5rem solid transparent;
+        border-bottom: 2.5rem solid transparent;
+        outline: none;
+        background-color: transparent;
+        transition: opacity .2s;
+        opacity: .8;
+        cursor: pointer;
+        &--disabled {
+            opacity: 0;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.swiper-pagination {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    &__dot {
+        width: 1rem;
+        height: 1rem;
+        margin: 0 .5rem;
+        background-color: $color-tertiary;
+        opacity: .5;
+        &--active {
+            background-color: $color-primary;
+            opacity: 1;
+        }
+    }
+}
+
+.pie {
+    &--python {
+        @include makePie(80, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+    }
+    &--javascript {
+        @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+    }
+    &--go {
+        @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+    }
+    &--sql {
+        @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+    }
+    &--debian {
+        @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+    }
+    &--nodejs {
+        @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+    }
+    &--r {
+        @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+    }
+    &--excel {
+        @include makePie(90, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+    }
+    &--c {
+        @include makePie(30, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+    }
+    &--others {
+        @include makePie(10, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
     }
 }
 
@@ -81,13 +226,13 @@
     }
     &__heading {
         font-size: 2.2rem;
-        & > a:link,
-        & > a:visited {
+        &>a:link,
+        &>a:visited {
             text-decoration: none;
             color: $color-primary;
         }
-        & > a:hover,
-        & > a:active {
+        &>a:hover,
+        &>a:active {
             color: $color-primary-dark;
         }
     }
@@ -109,7 +254,7 @@
         overflow: hidden;
         background-color: black;
         width: 25%;
-        & > img {
+        &>img {
             opacity: 0.5;
             width: 100%;
             transition: all 0.5s;
@@ -118,7 +263,34 @@
                 opacity: 1;
                 transform: scale(1.15);
             }
+            &[data-src] {
+                opacity: 0;
+            }
         }
+    }
+}
+
+.modal-container {
+    list-style: none;
+    margin-bottom: 3rem;
+    &__name {
+        display: flex;
+        margin-bottom: 1rem;
+    }
+    &__email {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+    &__message-sub {
+        margin-bottom: .5rem;
+    }
+    &__subject {
+        font-size: 1.8rem;
+        font-weight: 700;
+        width: 10rem;
+    }
+    &__value {
+        font-size: 1.8rem;
     }
 }
 
@@ -138,16 +310,16 @@
         text-transform: uppercase;
     }
     &__img-box {
-        & > img {
+        float: left;
+        clip-path: round(12rem);
+        &>img {
             width: 12rem;
             height: 12rem;
             border-radius: 50%;
         }
     }
-    &__paragraphs {
-        & > p {
-            font-weight: lighter;
-        }
+    &__paragraph {
+        font-weight: lighter;
     }
     &__copy {
         font-size: 1.4rem;
@@ -166,6 +338,7 @@
         background-color: transparent;
         color: inherit;
         outline: none;
+        resize: none;
         &:focus {
             border: 2px solid $color-primary;
         }

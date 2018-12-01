@@ -75,6 +75,14 @@
     &--small {
         padding: 1rem 2rem;
     }
+    &--filled {
+        background-color: $color-primary-dark;
+        border: 3px solid $color-primary-dark;
+        &:hover {
+            box-shadow: 0 2px 8px 0 rgba(black, 0.2);
+            transform: translateY(0);
+        }
+    }
 }
 
 .square-arrow-up {
@@ -123,102 +131,6 @@
     }
 }
 
-// modifiers for tiny slider
-.tns-outer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    width: 100%;
-}
-
-.tns-ovh {
-    flex: 1;
-    position: relative;
-    z-index: 0;
-    width: 80%;
-}
-
-.tns-item {
-    padding: 0 4rem;
-}
-
-.tns-nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    &>button {
-        height: 10px;
-        width: 10px;
-        margin: 0 5px;
-        border: none;
-        background-color: white;
-        outline: none;
-    }
-    &>&-active {
-        background-color: $color-primary;
-    }
-}
-
-.tns-controls {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 30%;
-    z-index: 10;
-    width: 82%;
-    outline: none;
-    &>button {
-        width: 4rem;
-        height: 4rem;
-        border: none;
-        border-top: 2rem solid transparent;
-        border-bottom: 2rem solid transparent;
-        outline: none;
-        background-color: transparent;
-        &:first-child {
-            border-right: 2rem solid $color-primary-dark;
-            border-left: 2rem solid transparent;
-        }
-        &:last-child {
-            border-right: 2rem solid transparent;
-            border-left: 2rem solid $color-primary-dark;
-        }
-    }
-}
-
-/* card */
-
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    /* flexで高さをとるとレイアウトが崩壊するのでハードコード */
-    height: $section-height * 0.6;
-    width: 100%;
-    padding: 6rem 6rem;
-    box-shadow: 0 2px 4px 2px rgba(black, 0.2);
-    border-radius: 1px;
-    background-color: white;
-    &__heading {
-        font-size: 2.8rem;
-        margin-bottom: 5rem;
-    }
-    &__pie {
-        margin-bottom: 7rem;
-    }
-    &__description {
-        flex: 1;
-        width: 100%;
-    }
-    &__detail {
-        margin-bottom: 1.8rem;
-    }
-}
-
 @mixin makePie( $percentage, $anime-half-duration, $font-size, $outer-radius, $inner-radius, $fg-color, $bg-color) {
     position: relative;
     width: $outer-radius * 2;
@@ -226,7 +138,7 @@
     .pie__right {
         position: absolute;
         right: 0;
-        width: calc(#{$outer-radius} + 1px);
+        width: $outer-radius;
         height: $outer-radius * 2;
         overflow: hidden;
         &::before {
@@ -236,16 +148,14 @@
             width: $outer-radius * 2;
             height: $outer-radius * 2;
             border-radius: 50%;
-            background-image: linear-gradient( to right, $fg-color 50%, transparent 50%); // animation: rotateRightPie $anime-half-duration;
+            background-image: linear-gradient( to right, $fg-color 50%, transparent 50%);
             @include rotate-right-pie($percentage, $anime-half-duration);
             animation-fill-mode: forwards;
             content: '';
         }
     }
     .pie__left {
-        @if $percentage < 50 {
-            display: none;
-        }
+        visibility: hidden;
         position: absolute;
         left: 0;
         width: $outer-radius;
@@ -309,14 +219,14 @@
 @mixin rotate-left-pie($percentage, $half-duration) {
     @keyframes rotate-left-pie-#{$percentage} {
         0% {
-            transform: rotate(0);
+            @if $percentage>50 {
+                transform: rotate(0);
+            }
         }
         100% {
             @if $percentage>50 {
+                visibility: visible; // animationできない
                 transform: rotate(($percentage - 50)/50 * 180deg);
-            }
-            @else {
-                transform: rotate(0);
             }
         }
     }
@@ -334,35 +244,68 @@
     }
 }
 
-.pie {
-    &--python {
-        @include makePie(80, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
+.modal {
+    // display: none;
+    &__outer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: $z-highest;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(black, .7);
     }
-    &--javascript {
-        @include makePie(60, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 60%;
+        height: 60%;
+        padding: 8rem 0;
+        background-color: white;
     }
-    &--go {
-        @include makePie(50, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
+    &__contents {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
     }
-    &--sql {
-        @include makePie(60, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
+    &__confirmation {
+        font-size: 1.4rem;
     }
-    &--debian {
-        @include makePie(40, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
+    &__btns {
+        margin-bottom: 1rem;
     }
-    &--nodejs {
-        @include makePie(50, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
-    }
-    &--r {
-        @include makePie(40, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
-    }
-    &--excel {
-        @include makePie(90, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
-    }
-    &--c {
-        @include makePie(30, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
-    }
-    &--others {
-        @include makePie(10, 1s, 3.8rem, 10rem, 6rem, $color-primary, white);
+    &__btn {
+        margin: 0 .5rem;
+        padding: 1rem 3rem;
+        border: 3px solid $color-primary;
+        outline: none;
+        &--submit {
+            background-color: $color-primary;
+            color: white;
+            cursor: pointer;
+            &:hover {
+                border: 3px solid $color-primary-dark;
+                background-color: $color-primary-dark;
+            }
+        }
+        &--cancel {
+            background-color: white;
+            color: $color-primary-dark;
+            cursor: pointer;
+            &:hover,
+            &:active {
+                border: 3px solid $color-primary-dark;
+                background-color: $color-primary-dark;
+                color: white;
+            }
+        }
     }
 }
