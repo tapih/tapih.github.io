@@ -91,7 +91,7 @@ img {
 .hamburger {
   position: relative;
   width: 25px;
-  height: 20px;
+  height: 21px;
   border: none;
   outline: none;
   background-color: transparent;
@@ -106,17 +106,18 @@ img {
     .hamburger > span:nth-child(1) {
       top: 0; }
     .hamburger > span:nth-child(2) {
-      top: 50%; }
+      top: 50%;
+      transform: translateY(-50%); }
     .hamburger > span:nth-child(3) {
       bottom: 0; }
   .hamburger--open > span:nth-child(1) {
     background-color: black;
-    transform: translateY(9px) rotate(315deg); }
+    transform: translateY(9.5px) rotate(315deg); }
   .hamburger--open > span:nth-child(2) {
     opacity: 0; }
   .hamburger--open > span:nth-child(3) {
     background-color: black;
-    transform: translateY(-9px) rotate(-315deg); }
+    transform: translateY(-9.5px) rotate(-315deg); }
 
 .btn, .btn:link, .btn:visited {
   display: block;

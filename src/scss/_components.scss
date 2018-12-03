@@ -48,7 +48,7 @@
 $hamburger-color: white;
 $hamburger-color-open: black;
 $hamburger-width: 25px;
-$hamburger-height: 20px;
+$hamburger-height: 21px;
 $hamburger-thickness: 2px;
 $hamburger-transition-y: $hamburger-height / 2 - $hamburger-thickness / 2;
 .hamburger {
@@ -71,6 +71,7 @@ $hamburger-transition-y: $hamburger-height / 2 - $hamburger-thickness / 2;
         }
         &:nth-child(2) {
             top: 50%;
+            transform: translateY(-50%);
         }
         &:nth-child(3) {
             bottom: 0;
