@@ -97,6 +97,17 @@ eval("module.exports = function() {\n    var DOM = {\n      container: document.
 
 /***/ }),
 
+/***/ "./src/js/disableBgAttach.js":
+/*!***********************************!*\
+  !*** ./src/js/disableBgAttach.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = function() {\n  if (isIOS()) {\n      var hero = document.querySelector('.hero-wrapper');\n      hero.classList.remove('hero-wrapper--paraxify');\n      var photo = document.querySelector('.about-container__img');\n      hero.classList.remove('about-container__img--paraxify');\n  }\n};\n\nfunction isIOS() {\n  let userAgent = window.navigator.userAgent.toLowerCase();\n  if (userAgent.match(/(iphone|ipod|ipad)/)) {\n    return true;\n  }\n  return false;\n}\n\n\n//# sourceURL=webpack:///./src/js/disableBgAttach.js?");
+
+/***/ }),
+
 /***/ "./src/js/disableIe.js":
 /*!*****************************!*\
   !*** ./src/js/disableIe.js ***!
@@ -126,7 +137,7 @@ eval("module.exports = function() {\n    var hamburger = document.querySelector(
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./disableIe.js */ \"./src/js/disableIe.js\")();\n__webpack_require__(/*! ./waypoint.js */ \"./src/js/waypoint.js\")();\n__webpack_require__(/*! ./lazyLoad.js */ \"./src/js/lazyLoad.js\")();\n__webpack_require__(/*! ./hamburger.js */ \"./src/js/hamburger.js\")();\n__webpack_require__(/*! ./postForm.js */ \"./src/js/postForm.js\")();\n__webpack_require__(/*! ./carousel.js */ \"./src/js/carousel.js\")();\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__(/*! ./disableIe.js */ \"./src/js/disableIe.js\")();\n__webpack_require__(/*! ./disableBgAttach.js */ \"./src/js/disableBgAttach.js\")();\n__webpack_require__(/*! ./waypoint.js */ \"./src/js/waypoint.js\")();\n__webpack_require__(/*! ./lazyLoad.js */ \"./src/js/lazyLoad.js\")();\n__webpack_require__(/*! ./hamburger.js */ \"./src/js/hamburger.js\")();\n__webpack_require__(/*! ./postForm.js */ \"./src/js/postForm.js\")();\n__webpack_require__(/*! ./carousel.js */ \"./src/js/carousel.js\")();\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 

@@ -94,8 +94,10 @@
         background: url(../img/self-min.jpg) no-repeat;
         background-size: 80vw auto;
         background-position: 40vw bottom;
-        background-attachment: fixed;
         transform: skew(20deg) translateX(-10vw);
+        &--paraxify {
+            background-attachment: fixed;
+        }
         @include respond(tab-land) {
             width: 20rem;
             height: 20rem;

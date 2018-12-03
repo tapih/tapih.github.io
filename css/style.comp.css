@@ -622,12 +622,9 @@ img {
   width: 100%;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/hero1-min.jpg);
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  /* disable attachment for phone */ }
-  @media only screen and (max-width: 37.5em) {
-    .hero-wrapper {
-      background-attachment: scroll; } }
+  background-position: center; }
+  .hero-wrapper--paraxify {
+    background-attachment: fixed; }
 
 .about-wrapper,
 .skills-wrapper,
@@ -759,8 +756,9 @@ img {
     background: url(../img/self-min.jpg) no-repeat;
     background-size: 80vw auto;
     background-position: 40vw bottom;
-    background-attachment: fixed;
     transform: skew(20deg) translateX(-10vw); }
+    .about-container__img--paraxify {
+      background-attachment: fixed; }
     @media only screen and (max-width: 75em) {
       .about-container__img {
         width: 20rem;

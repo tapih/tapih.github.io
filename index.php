@@ -90,7 +90,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
             <div><a class="square-arrow-up go-to-top" href="#hero"></a></div>
             <main>
                 <section id="hero">
-                    <div class="hero-wrapper">
+                    <div class="hero-wrapper hero-wrapper--paraxify">
                         <!-- background-image in CSS -->
                         <div class="hero-container">
                             <h1 class="hero-container__heading">
@@ -131,7 +131,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                 </p>
                             </div>
                             <div class="about-container__img-box">
-                                <div class="about-container__img">
+                                <div class="about-container__img about-container__img--paraxify">
                                 </div>
                             </div>
                         </div>
