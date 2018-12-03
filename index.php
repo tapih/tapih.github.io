@@ -1,10 +1,8 @@
 <?php
-// date_default_timezone_set('Asia/Tokyo'); //タイムゾーンの設定（日本以外の場合には適宜設定ください）
-// define('CSRF_TOKEN_EXPIRE', 180); // １つのCSRFトークンの有効期限（秒）
-// define('CSRF_TOKENS', 5); // 過去5つまでのトークンを有効なトークンとする
-
 session_start();
 $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
+$_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
+
 ?>
 <html lang="ja">
     <head>
@@ -50,31 +48,41 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
             href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto+Condensed:300,400,700"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="./css/style.css" />
+        <link href="https://unpkg.com/ionicons@4.4.8/dist/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/style.css" />
     </head>
 
     <body>
         <div class="wrapper">
             <header id="header">
                 <div class="header-wrapper">
-                    <nav class="navbar-box">
-                        <ul class="navbar">
-                            <li class="navbar__item">
-                                <a href="#about">About</a>
-                            </li>
-                            <li class="navbar__item">
-                                <a href="#skills">Skills</a>
-                            </li>
-                            <li class="navbar__item">
-                                <a href="#awards">Awards</a>
-                            </li>
-                            <li class="navbar__item">
-                                <a href="#works">Works</a>
-                            </li>
-                            <li class="navbar__item">
-                                <a href="#footer">Contact</a>
-                            </li>
-                        </ul>
+                    <nav>
+                        <div class="navbar-wrapper">
+                            <div class="navbar-wrapper__hamburger">
+                                <button class="hamburger">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                            <ul class="navbar-wrapper__list">
+                                <li class="navbar-wrapper__item">
+                                    <a href="#about">About</a>
+                                </li>
+                                <li class="navbar-wrapper__item">
+                                    <a href="#skills">Skills</a>
+                                </li>
+                                <li class="navbar-wrapper__item">
+                                    <a href="#awards">Awards</a>
+                                </li>
+                                <li class="navbar-wrapper__item">
+                                    <a href="#works">Works</a>
+                                </li>
+                                <li class="navbar-wrapper__item">
+                                    <a href="#footer">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
             </header>
@@ -105,26 +113,24 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                     <div class="about-wrapper">
                         <h2 class="section-heading">About</h2>
                         <div class="about-container">
-                            <div class="about-container__contents">
+                            <div class="about-container__description">
                                 <h3 class="about-container__heading">
                                     村岡 宏是<span>Hiroshi Muraoka</span>
                                 </h3>
-                                <div class="about-container__paragraph">
-                                    <p>
-                                        1988年生まれ。滋賀県在住。<br />
-                                        大学院修了後に国内証券会社のリサーチ部門に勤務し、3年後に退職して1年間の世界一周に出発。
-                                        帰国後はKaggleに参加しながら、ウェブ関連の技術を幅広く独学し、現在に至る。<br />
-                                        Deep
-                                        Learning等の機械学習モデルの構築(PyTorch/Keras/scikit-learn+pandas/numpy)、
-                                        レスポンシブな静的ページ作成(HTML5+CSS3+jQuery)、
-                                        フルスタックフレームワークを利用したウェブサービスの作成(Revel)、
-                                        REST APIの作成(Gin/Node.js)など。
-                                    </p>
-                                </div>
+                                <p class="about-container__paragraph">
+                                    1988年生まれ。滋賀県在住。<br />
+                                    大学院修了後に国内証券会社のリサーチ部門に勤務し、3年後に退職して1年間の世界一周に出発。
+                                    帰国後はKaggleに参加しながら、ウェブ関連の技術を幅広く独学し、現在に至る。<br />
+                                    Deep
+                                    Learning等の機械学習モデルの構築(PyTorch/Keras/scikit-learn+pandas/numpy)、
+                                    レスポンシブな静的ページ作成(HTML5+CSS3+jQuery)、
+                                    フルスタックフレームワークを利用したウェブサービスの作成(Revel)、
+                                    REST APIの作成(Gin/Node.js)など。
+                                    趣味はお酒と旅行と動物。
+                                </p>
                             </div>
                             <div class="about-container__img-box">
                                 <div class="about-container__img">
-                                    <!-- background-image in CSS -->
                                 </div>
                             </div>
                         </div>
@@ -135,9 +141,9 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                         <h2 class="section-heading section-heading--white">
                             Skills
                         </h2>
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
+                        <div class="carousel">
+                            <div class="carousel__wrapper">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">Python</h3>
                                         <div class="card__pie">
@@ -168,7 +174,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">
                                             JavaScript
@@ -188,29 +194,21 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                                 <h4>概要</h4>
                                                 <p class="card__paragraph">
                                                     HTML5+SCSSを用いたレスポンシブな静的サイトの構築。<br />
-                                                    jQuery/Vanilla
-                                                    JSを用いたMPA(Multiple Page
-                                                    Application)の構築。<br />
-                                                    React+ReduxによるSPA(Single
-                                                    Page
-                                                    Application)の構築の基礎知識。
+                                                    フロントエンドにjQueryを用いたMPA、React+ReduxによるSPAの構築。
                                                 </p>
                                             </div>
                                             <div class="card__keywords">
                                                 <h4>キーワード</h4>
                                                 <p class="card__paragraph">
-                                                    バージョン：ES5 / ES6 /
-                                                    TypeScript<br />
-                                                    View関連：JQuery / HTML5 /
-                                                    SCSS / React+Redux<br />
-                                                    開発ツール：npm / webpack /
-                                                    eslint / tslint / prettierx
+                                                    View関連：JQuery / HTML5 / SCSS / React+Redux<br />
+                                                    バージョン：ES5 / ES6 / TypeScript<br />
+                                                    開発ツール：npm / webpack / eslint / tslint / prettier
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">Go</h3>
                                         <div class="card__pie">
@@ -240,7 +238,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">
                                             PostgresSQL
@@ -265,7 +263,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">Debian</h3>
                                         <div class="card__pie">
@@ -296,7 +294,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">Node.js</h3>
                                         <div class="card__pie">
@@ -326,7 +324,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">C/C++</h3>
                                         <div class="card__pie">
@@ -348,7 +346,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">Excel</h3>
                                         <div class="card__pie">
@@ -370,7 +368,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">R</h3>
                                         <div class="card__pie">
@@ -397,7 +395,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         </div>
                                     </div>
                                 </div>
-                                <div class="swiper-slide">
+                                <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">Others</h3>
                                         <div class="card__pie">
@@ -419,10 +417,10 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                     </div>
                                 </div>
                             </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-controls">
-                                <button class="swiper-controls__prev"></button>
-                                <button class="swiper-controls__next"></button>
+                            <div class="carousel__pagination"></div>
+                            <div class="carousel__controls">
+                                <button class="carousel__prev"></button>
+                                <button class="carousel__next"></button>
                             </div>
                         </div>
                     </div>
@@ -557,7 +555,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                 <img
                                     class="photos-container__img"
                                     data-src="/img/photos-21-min.jpg"
-                                    alt="Chefchaouen"
+                                    alt="Kazanraku"
                                 />
                             </li>
                             <li class="photos-container__item">
@@ -593,83 +591,103 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
             <div class="modal">
                 <div class="modal__outer">
                     <div class="modal__inner">
-                        <div class="modal__contents">
+                        <div class="modal__state modal__state--before">
                             <div class="modal-container">
-                                <div class="modal-container__name">
+                                <div class="modal-container__name-box">
                                     <span class="modal-container__subject">Name</span>
-                                    <span class="modal-container__value">tapitapi</span>
+                                    <span class="modal-container__value modal-container__value--name"></span>
                                 </div>
-                                <div class="modal-container__email">
+                                <div class="modal-container__email-box">
                                     <span class="modal-container__subject">Email</span>
-                                    <span class="modal-container__value">hogehoge@hoge.com</span>
+                                    <span class="modal-container__value modal-container__value--email"></span>
                                 </div>
-                                <div class="modal-container__message-sub">
+                                <div class="modal-container__message-box">
                                     <span class="modal-container__subject">Message</span>
                                 </div>
-                                <div class="modal-container__message">
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
-                                    Message
+                                <div class="modal-container__value modal-container__value--message">
                                 </div>
                             </div>
+                            <div class="modal__btns">
+                                <button class="modal__btn modal__btn--submit">Submit</button>
+                                <button class="modal__btn modal__btn--cancel">Cancel</button>
+                            </div>
+                            <p class="modal__confirmation">OK to submit?</p>
                         </div>
-                        <div class="modal__btns">
-                            <button class="modal__btn modal__btn--submit">Submit</button>
-                            <button class="modal__btn modal__btn--cancel">Cancel</button>
+                        <div class="modal__state modal__state--after">
+                            <div class="spinner">
+                                <div class="spinner__outer">
+                                    <div class="spinner__draw"></div>
+                                </div>
+                                <div class="spinner__message"></div>
+                            </div>
                         </div>
-                        <div class="modal__confirmation">OK to submit?</div>
                     </div>
                 </div>
             </div>
             <footer id="footer">
                 <div class="footer-wrapper">
                     <div class="footer-container">
-                        <div class="footer-container__contents">
-                            <h3 class="footer-container__heading">MESSAGE</h3>
-                            <div class="footer-container__description">
-                                <div class="footer-container__img-box">
-                                    <img
-                                        src="/img/footer-min.jpg"
-                                        alt="Puppy"
-                                    />
+                        <div class="footer-container__message">
+                            <div class="message-container">
+                                <h3 class="footer-heading">
+                                    Thank you for visiting my page !!!
+                                </h3>
+                                <p class="message-container__paragraph">
+                                    当ホームページをご覧いただきありがとうございます。<br>
+                                    現在、私は大阪・京都で就職活動中です。
+                                    データ分析の分野でのプログラミングの経験が豊富で、
+                                    フロントエンド・バックエンドの基礎(HTML5/CSS3/JS/Go)を習得しています。<br>
+                                    また、新しい技術を継続して学習する意欲があり、
+                                    実務でのWebアプリケーション開発の経験はないものの、
+                                    いち早く戦力としてキャッチアップできると自負しております。<br>
+                                    ご検討のほど、何卒よろしくお願いいたします。
+                                </p>
+                            </div>
+                            <div class="socials-container">
+                                <h3 class="footer-heading">
+                                    Find me on ...
+                                </h3>
+                                <div class="socials-container__icons">
+                                    <ul class="social-links">
+                                        <li class="social-links__item">
+                                            <a class="social-links__link social-links__link--github"
+                                                href="#">
+                                                <i class="icon ion-logo-github"></i>
+                                            </a>
+                                        </li>
+                                        <li class="social-links__item">
+                                            <a class="social-links__link social-links__link--facebook" href="https://www.facebook.com/h.muraoka714">
+                                                <i class="icon ion-logo-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="social-links__item">
+                                            <a class="social-links__link social-links__link--instagram" href="#">
+                                                <i class="icon ion-logo-instagram"></i>
+                                            </a>
+                                        </li class="social-links__item">
+                                    </ul>
                                 </div>
-                                <p class="footer-container__pagraph">
-                                    当サイトを閲覧いただき、ありがとうございます！
-                                    山形出身。趣味は旅行とワインと動物。
-                                    当ホームページをここまでご覧いただき、誠にありがとうございます。
-                                    Webエンジニアとして
-                                    業務でのWebサービス開発の経験はありませんが、
+                                <p class="socials-container__copy">
+                                    Copyrights &copy; 2018 www.kgjoi.com. All Rights
+                                    Reverved.
                                 </p>
                             </div>
                         </div>
                         <div class="footer-container__form">
+                            <h3 class="footer-heading">
+                            Contact
+                            </h3>
                             <form
                                 class="contact-form"
                                 action="/mailTo.php"
                                 method="POST"
                             >
-                                <h3 class="footer-container__heading">
-                                    Contact
-                                </h3>
                                 <input
                                     type="hidden"
                                     name="csrf_token"
                                     value="<?php echo $_SESSION['csrf_token'] ?>"
                                 />
-                                <div class="contact-form__box">
+                                <div class="contact-form__inputs">
                                     <input
                                         class="contact-form__input"
                                         type="name"
@@ -678,8 +696,6 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         placeholder="Name"
                                         required
                                     />
-                                </div>
-                                <div class="contact-form__box">
                                     <input
                                         class="contact-form__input"
                                         type="email"
@@ -689,7 +705,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         required
                                     />
                                 </div>
-                                <div class="contact-form__box">
+                                <div class="contact-form__textarea-box">
                                     <textarea
                                         class="contact-form__textarea"
                                         name="message"
@@ -698,15 +714,11 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
                                         required
                                     ></textarea>
                                 </div>
-                                <button class="contact-form__btn btn btn--small" type="submit">
+                                <button class="contact-form__btn btn" type="submit">
                                     Confirm
                                 </button>
                             </form>
                         </div>
-                    </div>
-                    <div class="footer-container__copy">
-                        Copyrights &copy; 2018 www.kgjoi.com. All Rights
-                        Reverved.
                     </div>
                 </div>
             </footer>

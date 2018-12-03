@@ -1,6 +1,8 @@
 <?php
 session_start();
 define("TOKEN_FIELD_NAME", 'csrf_token');
+define('CSRF_TOKEN_EXPIRE', 30 * 60); // 30m
+// define('CSRF_TOKENS', 5);
 
 function readConfig()
 {
@@ -14,7 +16,11 @@ function readConfig()
 
 function checkToken($session, $post)
 {
-    return !empty($_SESSION[TOKEN_FIELD_NAME]) && $_SESSION[TOKEN_FIELD_NAME] === $_POST[TOKEN_FIELD_NAME];
+    return (
+        !empty($_SESSION[TOKEN_FIELD_NAME]) &&
+        $_SESSION[TOKEN_FIELD_NAME] === $_POST[TOKEN_FIELD_NAME] &&
+        $_SESSION['csrf_generated_at'] - $_SERVER['REQUEST_TIME'] < CSRF_TOKEN_EXPIRE
+    );
 }
 
 function checkReferer($host)
@@ -105,20 +111,14 @@ $host = $config['hostname'];
 $referer = $config['referer'];
 $addressFromServer = $config['addressFromServer'];
 $addressToAdmin = $config['addressToAdmin'];
-// echo $host;
-// echo "\n";
-// echo $referer;
-// echo "\n";
-// echo $addressFromServer;
-// echo "\n";
-// echo $addressToAdmin;
-// echo "\n";
 
 // security
 if (!checkToken($_SESSION, $_POST)) {
     sendResponseMessage(401, 'Invlalid Form token was sent');
     exit;
 }
+unset($_POST[TOKEN_FIELD_NAME]);
+
 if (!checkReferer($referer)) {
     sendResponseMessage(401, 'Form was sent from invalid referer ' . $_SERVER['HTTP_REFERER']);
     exit;
@@ -164,7 +164,6 @@ if (mailToSender($addressFromServer, $email)) {
 }
 
 if (sendResponseMessage(200, 'Form was sent successfully')) {
-    // unset($_SESSION[TOKEN_FIELD_NAME]);
-    // unset($_POST[TOKEN_FIELD_NAME]);
+    unset($_SESSION[TOKEN_FIELD_NAME]);
     exit;
 }

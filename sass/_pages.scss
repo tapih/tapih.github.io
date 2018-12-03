@@ -5,174 +5,157 @@
     color: white;
     animation: popUp 0.8s ease 0.2s;
     &__heading {
-        margin-bottom: 0.5rem;
+        margin-bottom: 2rem;
         font-size: 5rem;
         font-weight: 400;
         text-transform: uppercase;
         letter-spacing: 1px;
         transition: transform 0.2s;
+        @include respond(phone) {
+            font-size: 3.5rem;
+        }
     }
     &__description {
-        margin-bottom: 4rem;
+        margin-bottom: 5rem;
         font-size: 2rem;
+        @include respond(phone) {
+            font-size: 1.6rem;
+        }
     }
 }
 
 .about-container {
+    flex: 1;
     display: flex;
-    justify-content: space-between;
-    height: 100%;
     width: 100%;
-    &__contents {
+    @include respond(tab-land) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    &__description {
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center; // margin-right: 6rem;
+        justify-content: center;
+        margin-right: 6rem;
         margin-left: 20rem;
+        @include respond(tab-land) {
+            display: block;
+            margin: 0;
+            width: 80%;
+        }
     }
     &__heading {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
         font-size: 3.2rem;
         font-weight: 300;
+        @include respond(tab-land) {
+            text-align: center;
+        }
+        @include respond(phone) {
+            font-size: 2.2rem;
+        }
         &>span {
-            margin-left: 1rem;
+            margin-left: 1.5rem;
             font-size: 2rem;
+            @include respond(phone) {
+                font-size: 1.6rem;
+            }
         }
     }
     &__paragraph {
         margin-bottom: 14rem;
         word-break: break-all;
         hyphens: auto;
-        &>p {
-            margin-bottom: 0.2rem;
+        @include respond(tab-land) {
+            margin-bottom: 0;
         }
     }
     &__img-box {
-        max-width: 75rem;
-        width: 50%;
-        height: 100%;
-        transform: skewX(-15deg) translateX(15rem);
+        display: flex;
+        width: 40%;
+        transform: skew(-20deg) translateX(10vw);
         overflow: hidden;
+        @include respond(tab-land) {
+            width: 20rem;
+            height: 20rem;
+            margin-bottom: 5rem;
+            border-radius: 50%;
+            background-color: transparent;
+            transform: none;
+        }
+        @include respond(phone) {
+            width: 15rem;
+            height: 15rem;
+        }
     }
     &__img {
-        height: 100%;
-        background: url(../img/self-min.jpg) bottom right no-repeat;
-        background-size: contain;
+        flex: 1;
+        background: url(../img/self-min.jpg) no-repeat;
+        background-size: 80vw auto;
+        background-position: 50vw bottom;
         background-attachment: fixed;
-        transform: skewX(15deg) translateX(-15rem);
+        transform: skew(20deg) translateX(-10vw);
+        @include respond(tab-land) {
+            width: 20rem;
+            height: 20rem;
+            background-size: cover;
+            background-position: -3rem center;
+            background-attachment: scroll;
+            transform: none;
+        }
+        @include respond(phone) {
+            width: 15rem;
+            height: 15rem;
+            background-position: -2.5rem center;
+        }
     }
 }
 
-/* card */
+/* skills section */
+
+.carousel {
+    flex: 1;
+    width: 80%;
+    @include respond(phone) {
+        width: 90%;
+    }
+}
 
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // widthはjsで調整している
+    flex: 1;
     padding: 3rem 4rem;
     box-shadow: 0 2px 4px 2px rgba(black, 0.2);
     border-radius: 1px;
     background-color: white;
+    @include respond(phone) {
+        padding: 2.5rem 2.5rem;
+    }
     &__pie {
+        display: flex;
+        justify-content: center;
         margin-bottom: 4rem;
+        @include respond(phone) {
+            margin-bottom: 1.5rem;
+        }
     }
     &__heading {
-        font-size: 2.8rem;
         margin-bottom: 3rem;
+        font-size: 2.8rem;
+        text-align: center;
+        @include respond(phone) {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
     }
     &__description {
         width: 100%;
     }
     &__detail {
         margin-bottom: 2rem;
-    }
-}
-
-// carousel
-.swiper-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 80%;
-    overflow: hidden;
-}
-
-.swiper-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 300%;
-    transition: transform .5s ease-in-out;
-}
-
-.swiper-slide {
-    margin: 0 2rem;
-}
-
-.swiper-controls {
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    outline: none;
-    &__prev {
-        width: 5rem;
-        height: 5rem;
-        border-right: 2.5rem solid $color-primary;
-        border-left: 2.5rem solid transparent;
-        border-top: 2.5rem solid transparent;
-        border-bottom: 2.5rem solid transparent;
-        outline: none;
-        background-color: transparent;
-        transition: opacity .2s;
-        opacity: .8;
-        cursor: pointer;
-        &--disabled {
-            opacity: 0;
-        }
-        &:hover {
-            opacity: 1;
-        }
-    }
-    &__next {
-        width: 5rem;
-        height: 5rem;
-        border-right: 2.5rem solid transparent;
-        border-left: 2.5rem solid $color-primary;
-        border-top: 2.5rem solid transparent;
-        border-bottom: 2.5rem solid transparent;
-        outline: none;
-        background-color: transparent;
-        transition: opacity .2s;
-        opacity: .8;
-        cursor: pointer;
-        &--disabled {
-            opacity: 0;
-        }
-        &:hover {
-            opacity: 1;
-        }
-    }
-}
-
-.swiper-pagination {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    &__dot {
-        width: 1rem;
-        height: 1rem;
-        margin: 0 .5rem;
-        background-color: $color-tertiary;
-        opacity: .5;
-        &--active {
-            background-color: $color-primary;
-            opacity: 1;
+        @include respond(phone) {
+            margin-bottom: .8rem;
         }
     }
 }
@@ -180,56 +163,94 @@
 .pie {
     &--python {
         @include makePie(80, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(80, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
     &--javascript {
         @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
     &--go {
         @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
     &--sql {
         @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
     &--debian {
         @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
     &--nodejs {
         @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
     &--r {
         @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
     &--excel {
         @include makePie(90, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(90, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
     &--c {
         @include makePie(30, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
     &--others {
         @include makePie(10, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+            @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
     }
 }
 
 .awards-container {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 80%;
+    margin: 0 auto;
     max-width: 100rem;
     &__item {
         display: flex;
         width: 100%;
+        margin: 0 auto;
+        @include respond(phone) {
+            flex-direction: column;
+        }
     }
     &__item:not(:last-child) {
         margin-bottom: 1.8rem;
+        @include respond(phone) {
+            margin-bottom: 3rem;
+        }
     }
     &__heading {
-        font-size: 2.2rem;
         &>a:link,
         &>a:visited {
             text-decoration: none;
             color: $color-primary;
+            font-size: 2.2rem;
+            @include respond(phone) {
+                font-size: 1.6rem;
+            }
         }
         &>a:hover,
         &>a:active {
@@ -249,40 +270,49 @@
         display: flex;
         align-items: center;
         width: 100%;
+        @include respond(phone) {
+            flex-wrap: wrap;
+        }
     }
     &__item {
         overflow: hidden;
         background-color: black;
         width: 25%;
+        @include respond(phone) {
+            width: 50%;
+            background-color: transparent;
+        }
         &>img {
             opacity: 0.5;
             width: 100%;
             transition: all 0.5s;
             backface-visibility: hidden;
+            @include respond(phone) {
+                opacity: 1;
+            }
             &:hover {
                 opacity: 1;
                 transform: scale(1.15);
-            }
-            &[data-src] {
-                opacity: 0;
             }
         }
     }
 }
 
 .modal-container {
+    flex: 1;
     list-style: none;
-    margin-bottom: 3rem;
-    &__name {
+    width: 100%;
+    margin-bottom: 8rem;
+    &__name-box {
         display: flex;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
     }
-    &__email {
+    &__email-box {
         display: flex;
         margin-bottom: 2rem;
     }
-    &__message-sub {
-        margin-bottom: .5rem;
+    &__message-box {
+        margin-bottom: 0.5rem;
     }
     &__subject {
         font-size: 1.8rem;
@@ -294,60 +324,76 @@
     }
 }
 
+// footer
 .footer-container {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 5rem;
     width: 80%;
     max-width: 120rem;
-    &__contents {
+    &__message {
         flex: 1;
-        margin-right: 15rem;
-    }
-    &__heading {
-        margin-bottom: 1rem;
-        font-size: 2.5rem;
-        text-transform: uppercase;
-    }
-    &__img-box {
-        float: left;
-        clip-path: round(12rem);
-        &>img {
-            width: 12rem;
-            height: 12rem;
-            border-radius: 50%;
+        margin-right: 5rem;
+        @include respond(tab-port) {
+            margin-right: 0;
         }
     }
-    &__paragraph {
-        font-weight: lighter;
+    &__form {
+        flex: 1;
+        @include respond(tab-port) {
+            margin-bottom: 10rem;
+        }
     }
-    &__copy {
-        font-size: 1.4rem;
+    @include respond(tab-port) {
+        flex-direction: column-reverse;
     }
 }
 
-.contact-form {
-    width: 50rem;
-    color: white;
-    &__input,
-    &__textarea {
-        width: 100%;
-        margin-bottom: 2rem;
-        padding: 0.8rem 1.5rem;
-        border: 2px solid white;
-        background-color: transparent;
-        color: inherit;
-        outline: none;
-        resize: none;
-        &:focus {
-            border: 2px solid $color-primary;
+.message-container {
+    margin-bottom: 5rem;
+}
+
+.socials-container {
+    flex: 1;
+    &__icons {
+        flex: 1;
+    }
+    &__copy {
+        font-family: sans-serif;
+        font-size: 1.2rem;
+        color: $color-tertiary;
+        @include respond(phone) {
+            font-size: 1rem;
+            line-height: 1.4rem;
         }
     }
-    &__textarea {
-        height: 20rem;
-        color: inherit;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    &__item {
+        margin-right: 1.5rem;
     }
-    &__button {
-        border: 2px solid white;
+    &__link {
+        &:link,
+        &:visited {
+            display: flex;
+            align-items: center;
+            margin-right: 0.5rem;
+            font-size: 3rem;
+            color: $color-tertiary;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        &--facebook:hover {
+            color: #3b5998;
+        }
+        &--instagram:hover {
+            color: #517fa4;
+        }
+        &--github:hover {
+            color: #181717;
+        }
     }
 }
