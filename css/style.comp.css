@@ -810,6 +810,1420 @@ img {
     @media only screen and (max-width: 37.5em) {
       .card__pie {
         margin-bottom: 1.5rem; } }
+    .card__pie .pie--python[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--python[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--python[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-80 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-80 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(180deg); } }
+      .card__pie .pie--python[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--python[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-80 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-80 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    visibility: visible;
+    transform: rotate(108deg); } }
+      .card__pie .pie--python[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--python[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "80%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--python[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--python[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--python[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-80 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-80 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(180deg); } }
+          .card__pie .pie--python[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--python[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-80 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-80 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            visibility: visible;
+            transform: rotate(108deg); } }
+          .card__pie .pie--python[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--python[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "80%"; } }
+    .card__pie .pie--javascript[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--javascript[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--javascript[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-60 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-60 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(180deg); } }
+      .card__pie .pie--javascript[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--javascript[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-60 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-60 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    visibility: visible;
+    transform: rotate(36deg); } }
+      .card__pie .pie--javascript[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--javascript[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "60%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--javascript[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--javascript[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--javascript[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-60 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-60 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(180deg); } }
+          .card__pie .pie--javascript[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--javascript[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-60 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-60 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            visibility: visible;
+            transform: rotate(36deg); } }
+          .card__pie .pie--javascript[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--javascript[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "60%"; } }
+    .card__pie .pie--go[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--go[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--go[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-50 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-50 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(180deg); } }
+      .card__pie .pie--go[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--go[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-50 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-50 {
+  0% { }
+  100% { } }
+      .card__pie .pie--go[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--go[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "50%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--go[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--go[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--go[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-50 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-50 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(180deg); } }
+          .card__pie .pie--go[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--go[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-50 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-50 {
+          0% { }
+          100% { } }
+          .card__pie .pie--go[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--go[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "50%"; } }
+    .card__pie .pie--sql[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--sql[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--sql[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-60 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-60 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(180deg); } }
+      .card__pie .pie--sql[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--sql[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-60 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-60 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    visibility: visible;
+    transform: rotate(36deg); } }
+      .card__pie .pie--sql[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--sql[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "60%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--sql[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--sql[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--sql[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-60 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-60 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(180deg); } }
+          .card__pie .pie--sql[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--sql[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-60 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-60 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            visibility: visible;
+            transform: rotate(36deg); } }
+          .card__pie .pie--sql[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--sql[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "60%"; } }
+    .card__pie .pie--debian[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--debian[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--debian[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-40 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-40 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(144deg); } }
+      .card__pie .pie--debian[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--debian[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-40 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-40 {
+  0% { }
+  100% { } }
+      .card__pie .pie--debian[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--debian[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "40%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--debian[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--debian[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--debian[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-40 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-40 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(144deg); } }
+          .card__pie .pie--debian[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--debian[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-40 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-40 {
+          0% { }
+          100% { } }
+          .card__pie .pie--debian[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--debian[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "40%"; } }
+    .card__pie .pie--nodejs[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--nodejs[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--nodejs[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-50 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-50 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(180deg); } }
+      .card__pie .pie--nodejs[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--nodejs[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-50 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-50 {
+  0% { }
+  100% { } }
+      .card__pie .pie--nodejs[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--nodejs[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "50%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--nodejs[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--nodejs[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--nodejs[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-50 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-50 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(180deg); } }
+          .card__pie .pie--nodejs[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--nodejs[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-50 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-50 {
+          0% { }
+          100% { } }
+          .card__pie .pie--nodejs[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--nodejs[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "50%"; } }
+    .card__pie .pie--r[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--r[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--r[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-40 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-40 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(144deg); } }
+      .card__pie .pie--r[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--r[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-40 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-40 {
+  0% { }
+  100% { } }
+      .card__pie .pie--r[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--r[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "40%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--r[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--r[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--r[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-40 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-40 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(144deg); } }
+          .card__pie .pie--r[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--r[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-40 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-40 {
+          0% { }
+          100% { } }
+          .card__pie .pie--r[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--r[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "40%"; } }
+    .card__pie .pie--excel[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--excel[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--excel[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-90 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-90 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(180deg); } }
+      .card__pie .pie--excel[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--excel[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-90 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-90 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    visibility: visible;
+    transform: rotate(144deg); } }
+      .card__pie .pie--excel[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--excel[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "90%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--excel[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--excel[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--excel[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-90 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-90 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(180deg); } }
+          .card__pie .pie--excel[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--excel[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-90 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-90 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            visibility: visible;
+            transform: rotate(144deg); } }
+          .card__pie .pie--excel[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--excel[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "90%"; } }
+    .card__pie .pie--c[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--c[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--c[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-30 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-30 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(108deg); } }
+      .card__pie .pie--c[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--c[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-30 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-30 {
+  0% { }
+  100% { } }
+      .card__pie .pie--c[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--c[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "30%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--c[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--c[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--c[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-30 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-30 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(108deg); } }
+          .card__pie .pie--c[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--c[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-30 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-30 {
+          0% { }
+          100% { } }
+          .card__pie .pie--c[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--c[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "30%"; } }
+    .card__pie .pie--others[data-animated] {
+      position: relative;
+      width: 16rem;
+      height: 16rem; }
+      .card__pie .pie--others[data-animated] .pie__right {
+        position: absolute;
+        right: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--others[data-animated] .pie__right::before {
+          display: block;
+          position: absolute;
+          right: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+          animation: rotate-right-pie-10 1s ease-in;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-right-pie-10 {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(36deg); } }
+      .card__pie .pie--others[data-animated] .pie__left {
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        width: 8rem;
+        height: 16rem;
+        overflow: hidden; }
+        .card__pie .pie--others[data-animated] .pie__left::before {
+          display: block;
+          position: absolute;
+          left: 0;
+          width: 16rem;
+          height: 16rem;
+          border-radius: 50%;
+          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+          animation: rotate-left-pie-10 1s ease-out 1s;
+          animation-fill-mode: forwards;
+          content: ''; }
+
+@keyframes rotate-left-pie-10 {
+  0% { }
+  100% { } }
+      .card__pie .pie--others[data-animated] .pie__center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 8rem;
+        left: 8rem;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%); }
+        .card__pie .pie--others[data-animated] .pie__center::before {
+          display: block;
+          font-size: 3.8rem;
+          font-weight: 700;
+          opacity: 0;
+          animation: fadeIn 1s;
+          animation-delay: 1s;
+          animation-fill-mode: forwards;
+          content: "10%"; }
+      @media only screen and (max-width: 37.5em) {
+        .card__pie .pie--others[data-animated] {
+          position: relative;
+          width: 10rem;
+          height: 10rem; }
+          .card__pie .pie--others[data-animated] .pie__right {
+            position: absolute;
+            right: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--others[data-animated] .pie__right::before {
+              display: block;
+              position: absolute;
+              right: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
+              animation: rotate-right-pie-30 1s ease-in;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-right-pie-30 {
+          0% {
+            transform: rotate(0); }
+          100% {
+            transform: rotate(108deg); } }
+          .card__pie .pie--others[data-animated] .pie__left {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            width: 5rem;
+            height: 10rem;
+            overflow: hidden; }
+            .card__pie .pie--others[data-animated] .pie__left::before {
+              display: block;
+              position: absolute;
+              left: 0;
+              width: 10rem;
+              height: 10rem;
+              border-radius: 50%;
+              background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
+              animation: rotate-left-pie-30 1s ease-out 1s;
+              animation-fill-mode: forwards;
+              content: ''; }
+        @keyframes rotate-left-pie-30 {
+          0% { }
+          100% { } }
+          .card__pie .pie--others[data-animated] .pie__center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%); }
+            .card__pie .pie--others[data-animated] .pie__center::before {
+              display: block;
+              font-size: 2.5rem;
+              font-weight: 700;
+              opacity: 0;
+              animation: fadeIn 1s;
+              animation-delay: 1s;
+              animation-fill-mode: forwards;
+              content: "30%"; } }
   .card__heading {
     margin-bottom: 3rem;
     font-size: 2.8rem;
@@ -825,1430 +2239,6 @@ img {
     @media only screen and (max-width: 37.5em) {
       .card__detail {
         margin-bottom: 0.8rem; } }
-
-.pie--python {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--python .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--python .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-80 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-80 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(180deg); } }
-  .pie--python .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--python .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-80 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-80 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    visibility: visible;
-    transform: rotate(108deg); } }
-  .pie--python .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--python .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "80%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--python {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--python .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--python .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-80 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-80 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(180deg); } }
-      .pie--python .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--python .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-80 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-80 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        visibility: visible;
-        transform: rotate(108deg); } }
-      .pie--python .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--python .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "80%"; } }
-
-.pie--javascript {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--javascript .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--javascript .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-60 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-60 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(180deg); } }
-  .pie--javascript .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--javascript .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-60 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-60 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    visibility: visible;
-    transform: rotate(36deg); } }
-  .pie--javascript .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--javascript .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "60%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--javascript {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--javascript .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--javascript .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-60 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-60 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(180deg); } }
-      .pie--javascript .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--javascript .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-60 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-60 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        visibility: visible;
-        transform: rotate(36deg); } }
-      .pie--javascript .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--javascript .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "60%"; } }
-
-.pie--go {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--go .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--go .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-50 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-50 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(180deg); } }
-  .pie--go .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--go .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-50 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-50 {
-  0% { }
-  100% { } }
-  .pie--go .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--go .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "50%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--go {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--go .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--go .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-50 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-50 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(180deg); } }
-      .pie--go .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--go .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-50 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-50 {
-      0% { }
-      100% { } }
-      .pie--go .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--go .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "50%"; } }
-
-.pie--sql {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--sql .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--sql .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-60 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-60 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(180deg); } }
-  .pie--sql .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--sql .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-60 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-60 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    visibility: visible;
-    transform: rotate(36deg); } }
-  .pie--sql .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--sql .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "60%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--sql {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--sql .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--sql .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-60 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-60 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(180deg); } }
-      .pie--sql .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--sql .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-60 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-60 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        visibility: visible;
-        transform: rotate(36deg); } }
-      .pie--sql .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--sql .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "60%"; } }
-
-.pie--debian {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--debian .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--debian .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-40 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-40 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(144deg); } }
-  .pie--debian .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--debian .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-40 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-40 {
-  0% { }
-  100% { } }
-  .pie--debian .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--debian .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "40%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--debian {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--debian .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--debian .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-40 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-40 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(144deg); } }
-      .pie--debian .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--debian .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-40 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-40 {
-      0% { }
-      100% { } }
-      .pie--debian .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--debian .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "40%"; } }
-
-.pie--nodejs {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--nodejs .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--nodejs .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-50 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-50 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(180deg); } }
-  .pie--nodejs .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--nodejs .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-50 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-50 {
-  0% { }
-  100% { } }
-  .pie--nodejs .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--nodejs .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "50%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--nodejs {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--nodejs .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--nodejs .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-50 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-50 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(180deg); } }
-      .pie--nodejs .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--nodejs .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-50 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-50 {
-      0% { }
-      100% { } }
-      .pie--nodejs .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--nodejs .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "50%"; } }
-
-.pie--r {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--r .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--r .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-40 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-40 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(144deg); } }
-  .pie--r .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--r .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-40 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-40 {
-  0% { }
-  100% { } }
-  .pie--r .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--r .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "40%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--r {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--r .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--r .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-40 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-40 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(144deg); } }
-      .pie--r .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--r .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-40 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-40 {
-      0% { }
-      100% { } }
-      .pie--r .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--r .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "40%"; } }
-
-.pie--excel {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--excel .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--excel .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-90 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-90 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(180deg); } }
-  .pie--excel .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--excel .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-90 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-90 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    visibility: visible;
-    transform: rotate(144deg); } }
-  .pie--excel .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--excel .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "90%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--excel {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--excel .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--excel .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-90 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-90 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(180deg); } }
-      .pie--excel .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--excel .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-90 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-90 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        visibility: visible;
-        transform: rotate(144deg); } }
-      .pie--excel .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--excel .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "90%"; } }
-
-.pie--c {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--c .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--c .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-30 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-30 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(108deg); } }
-  .pie--c .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--c .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-30 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-30 {
-  0% { }
-  100% { } }
-  .pie--c .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--c .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "30%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--c {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--c .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--c .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-30 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-30 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(108deg); } }
-      .pie--c .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--c .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-30 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-30 {
-      0% { }
-      100% { } }
-      .pie--c .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--c .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "30%"; } }
-
-.pie--others {
-  position: relative;
-  width: 16rem;
-  height: 16rem; }
-  .pie--others .pie__right {
-    position: absolute;
-    right: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--others .pie__right::before {
-      display: block;
-      position: absolute;
-      right: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-      animation: rotate-right-pie-10 1s ease-in;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-right-pie-10 {
-  0% {
-    transform: rotate(0); }
-  100% {
-    transform: rotate(36deg); } }
-  .pie--others .pie__left {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    width: 8rem;
-    height: 16rem;
-    overflow: hidden; }
-    .pie--others .pie__left::before {
-      display: block;
-      position: absolute;
-      left: 0;
-      width: 16rem;
-      height: 16rem;
-      border-radius: 50%;
-      background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-      animation: rotate-left-pie-10 1s ease-out 1s;
-      animation-fill-mode: forwards;
-      content: ''; }
-
-@keyframes rotate-left-pie-10 {
-  0% { }
-  100% { } }
-  .pie--others .pie__center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 8rem;
-    left: 8rem;
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    background-color: white;
-    transform: translate(-50%, -50%); }
-    .pie--others .pie__center::before {
-      display: block;
-      font-size: 3.8rem;
-      font-weight: 700;
-      opacity: 0;
-      animation: fadeIn 1s;
-      animation-delay: 1s;
-      animation-fill-mode: forwards;
-      content: "10%"; }
-  @media only screen and (max-width: 37.5em) {
-    .pie--others {
-      position: relative;
-      width: 10rem;
-      height: 10rem; }
-      .pie--others .pie__right {
-        position: absolute;
-        right: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--others .pie__right::before {
-          display: block;
-          position: absolute;
-          right: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, #34C6D3 50%, transparent 50%);
-          animation: rotate-right-pie-30 1s ease-in;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-right-pie-30 {
-      0% {
-        transform: rotate(0); }
-      100% {
-        transform: rotate(108deg); } }
-      .pie--others .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: 5rem;
-        height: 10rem;
-        overflow: hidden; }
-        .pie--others .pie__left::before {
-          display: block;
-          position: absolute;
-          left: 0;
-          width: 10rem;
-          height: 10rem;
-          border-radius: 50%;
-          background-image: linear-gradient(to right, transparent 50%, #34C6D3 50%);
-          animation: rotate-left-pie-30 1s ease-out 1s;
-          animation-fill-mode: forwards;
-          content: ''; }
-    @keyframes rotate-left-pie-30 {
-      0% { }
-      100% { } }
-      .pie--others .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 5rem;
-        left: 5rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: white;
-        transform: translate(-50%, -50%); }
-        .pie--others .pie__center::before {
-          display: block;
-          font-size: 2.5rem;
-          font-weight: 700;
-          opacity: 0;
-          animation: fadeIn 1s;
-          animation-delay: 1s;
-          animation-fill-mode: forwards;
-          content: "30%"; } }
 
 .awards-container {
   list-style: none;

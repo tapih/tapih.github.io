@@ -159,6 +159,68 @@
         @include respond(phone) {
             margin-bottom: 1.5rem;
         }
+        .pie {
+            &--python[data-animated] {
+                @include makePie(80, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(80, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--javascript[data-animated] {
+                @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--go[data-animated] {
+                @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--sql[data-animated] {
+                @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--debian[data-animated] {
+                @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--nodejs[data-animated] {
+                @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--r[data-animated] {
+                @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--excel[data-animated] {
+                @include makePie(90, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(90, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--c[data-animated] {
+                @include makePie(30, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--others[data-animated] {
+                @include makePie(10, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+        }
     }
     &__heading {
         margin-bottom: 3rem;
@@ -176,69 +238,6 @@
         margin-bottom: 2rem;
         @include respond(phone) {
             margin-bottom: 0.8rem;
-        }
-    }
-}
-
-.pie {
-    &--python {
-        @include makePie(80, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(80, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-        }
-    }
-    &--javascript {
-        @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-        }
-    }
-    &--go {
-        @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-        }
-    }
-    &--sql {
-        @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-        }
-    }
-    &--debian {
-        @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-        }
-    }
-    &--nodejs {
-        @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-        }
-    }
-    &--r {
-        @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-        }
-    }
-    &--excel {
-        @include makePie(90, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(90, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-        }
-    }
-    &--c {
-        @include makePie(30, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-        }
-    }
-    &--others {
-        @include makePie(10, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-        @include respond(phone) {
-            @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
         }
     }
 }
