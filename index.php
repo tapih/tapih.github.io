@@ -4,6 +4,7 @@ $_SESSION['csrf_token'] = sha1(uniqid(mt_rand(), true));
 $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
 
 ?>
+<!DOCTYPE html>
 <html lang="ja">
     <head>
         <!-- meta -->
@@ -518,7 +519,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                         </ul>
                     </div>
                 </section>
-                <section id="photos">
+                <div id="photos">
                     <div class="photos-container">
                         <ul class="photos-container__row">
                             <li class="photos-container__item">
@@ -581,7 +582,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                             </li>
                         </ul>
                     </div>
-                </section>
+                </div>
                 <section id="works">
                     <div class="works-wrapper">
                         <h2 class="section-heading">Works</h2>
@@ -664,7 +665,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                             <a class="social-links__link social-links__link--instagram" href="#">
                                                 <i class="icon ion-logo-instagram"></i>
                                             </a>
-                                        </li class="social-links__item">
+                                        </li>
                                     </ul>
                                 </div>
                                 <p class="socials-container__copy">
@@ -690,7 +691,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                 <div class="contact-form__inputs">
                                     <input
                                         class="contact-form__input"
-                                        type="name"
+                                        type="text"
                                         name="name"
                                         id="contact-name"
                                         placeholder="Name"
