@@ -1,7 +1,23 @@
 (function() {
   'use strict';
-  // var userAgent = window.navigator.userAgent.toLowerCase();
-  // console.log(userAgent);
+  function isIE() {
+    let userAgent = window.navigator.userAgent.toLowerCase();
+    if (
+      userAgent.indexOf('msie') !== -1 ||
+      userAgent.indexOf('trident') !== -1
+    ) {
+      return true;
+    }
+    return false;
+  }
+  if (isIE()) {
+    var wrapper = document.querySelector('.wrapper');
+    for (var i = 0; i < wrapper.children.length; i++) {
+      wrapper.children[i].style.display = 'none';
+    }
+    wrapper.innerHTML =
+      '<div style="font-size: 30px; padding: 50px;">Internet Explorerには非対応のため他のブラウザで閲覧ください。</div>';
+  }
 
   // lazy load of images
   // ----
@@ -11,7 +27,8 @@
     var timer;
     var interval = 300;
     imagesCont.style.display = 'none';
-    for (var img of images) {
+    for (var i = 0; i < images.length; i++) {
+      var img = images[i];
       var src = img.getAttribute('data-src');
       img.setAttribute('src', src);
       img.addEventListener('load', function() {
@@ -33,7 +50,8 @@
     var wpTop = wp.offsetTop;
     var targets = ['navbar-wrapper', 'go-to-top'];
     window.addEventListener('scroll', function() {
-      for (var name of targets) {
+      for (var i = 0; i < targets.length; i++) {
+        var name = targets[i];
         var nameWp = name + '--waypoint-on';
         var e = document.querySelector('.' + name);
         if (e.classList.contains(nameWp)) {
@@ -71,7 +89,8 @@
         navbarList.classList.add(nlcls);
       }
     });
-    for (var item of navbarItems) {
+    for (var i = 0; i < navbarItems.length; i++) {
+      var item = navbarItems[i];
       item.addEventListener('click', function() {
         hamburger.classList.remove(hcls);
         navbar.classList.remove(ncls);
@@ -200,11 +219,12 @@
     // params
     var constants = {};
     var initPage = 1;
-    // var margin = 20;
     var marginMap = { 0: 8, 600: 20 };
     var slidesPerViewMap = { 0: 1, 1100: 2, 1400: 3 }; // responsive min-width
     var margin;
     var slidesPerView;
+    var numSlides = DOM.slides.length;
+    var numPages;
     function updateResponsive() {
       var windowWidth = window.innerWidth;
       for (var k in slidesPerViewMap) {
@@ -217,24 +237,15 @@
           margin = marginMap[k];
         }
       }
+      numPages = Math.ceil(numSlides / slidesPerView);
     }
     updateResponsive();
-    var numSlides = DOM.slides.length;
-    var numPages = Math.ceil(numSlides / slidesPerView);
     DOM.wrapper.setAttribute('data-position', initPage);
 
     // state
     var states = {};
     var currPage = initPage;
     var sliderWidth;
-
-    function updatePosition() {
-      DOM.wrapper.style.transform =
-        'translateX(-' +
-        (sliderWidth + margin * 2) *
-          Math.min((currPage - 1) * slidesPerView, numSlides - slidesPerView) +
-        'px)';
-    }
 
     // initialize: disable button
     if (currPage === 1) {
@@ -255,10 +266,19 @@
     DOM.dots = document.querySelectorAll('.carousel__dot');
 
     // initialize: move initial position
+    function updatePosition() {
+      DOM.wrapper.style.transform =
+        'translateX(-' +
+        (sliderWidth + margin * 2) *
+          Math.min((currPage - 1) * slidesPerView, numSlides - slidesPerView) +
+        'px)';
+    }
+
     function handleResize() {
       sliderWidth = DOM.container.offsetWidth / slidesPerView - margin * 2;
-      for (var slide of DOM.slides) {
-        slide.children[0].style.width = sliderWidth;
+      for (var i = 0; i < DOM.slides.length; i++) {
+        var slide = DOM.slides[i];
+        slide.children[0].style.width = sliderWidth + 'px';
       }
       updatePosition();
     }
@@ -269,11 +289,8 @@
     window.addEventListener('resize', handleResize);
 
     function handleClickCommon(pageBeforeClick, pageAfterClick) {
-      // update dot color
       DOM.dots[pageBeforeClick - 1].classList.remove('carousel__dot--active');
       DOM.dots[pageAfterClick - 1].classList.add('carousel__dot--active');
-
-      // update dot color
       updatePosition();
     }
 

@@ -93,7 +93,7 @@
         flex: 1;
         background: url(../img/self-min.jpg) no-repeat;
         background-size: 80vw auto;
-        background-position: 50vw bottom;
+        background-position: 40vw bottom;
         background-attachment: fixed;
         transform: skew(20deg) translateX(-10vw);
         @include respond(tab-land) {
@@ -109,6 +109,24 @@
             height: 15rem;
             background-position: -2.5rem center;
         }
+    }
+}
+
+@-moz-document url-prefix() {
+    .about-container__img-box {
+        transform: none;
+    }
+    .about-container__img {
+        transform: none;
+    }
+}
+
+@supports (-ms-ime-align: auto) {
+    .about-container__img-box {
+        transform: none;
+    }
+    .about-container__img {
+        transform: none;
     }
 }
 
@@ -155,7 +173,7 @@
     &__detail {
         margin-bottom: 2rem;
         @include respond(phone) {
-            margin-bottom: .8rem;
+            margin-bottom: 0.8rem;
         }
     }
 }
