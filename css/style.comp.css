@@ -89,9 +89,7 @@ img {
       line-height: 2.4rem; } }
 
 .hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
   width: 25px;
   height: 20px;
   border: none;
@@ -99,11 +97,18 @@ img {
   background-color: transparent;
   cursor: pointer; }
   .hamburger > span {
+    position: absolute;
     height: 2px;
     width: 25px;
     background-color: white;
     border-radius: 3px;
     transition: all 0.2s; }
+    .hamburger > span:nth-child(1) {
+      top: 0; }
+    .hamburger > span:nth-child(2) {
+      top: 50%; }
+    .hamburger > span:nth-child(3) {
+      bottom: 0; }
   .hamburger--open > span:nth-child(1) {
     background-color: black;
     transform: translateY(9px) rotate(315deg); }
@@ -618,7 +623,11 @@ img {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/hero1-min.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  /* disable attachment for phone */ }
+  @media only screen and (max-width: 37.5em) {
+    .hero-wrapper {
+      background-attachment: scroll; } }
 
 .about-wrapper,
 .skills-wrapper,
