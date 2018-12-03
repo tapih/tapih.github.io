@@ -152,6 +152,7 @@
     min-height: $section-height;
     padding-top: 8rem;
     padding-bottom: 10rem;
+    background-color: white;
     @include respond(tab-port) {
         padding-top: 4rem;
         padding-bottom: 4rem;
@@ -164,6 +165,11 @@
     @include respond(phone) {
         display: block;
     }
+}
+
+.about-wrapper {
+    position: relative;
+    z-index: -2;
 }
 
 .skills-wrapper {

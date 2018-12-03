@@ -629,7 +629,8 @@ img {
   align-items: center;
   min-height: 105vh;
   padding-top: 8rem;
-  padding-bottom: 10rem; }
+  padding-bottom: 10rem;
+  background-color: white; }
   @media only screen and (max-width: 56.25em) {
     .about-wrapper,
     .skills-wrapper,
@@ -643,6 +644,10 @@ img {
   .awards-wrapper,
   .works-wrapper {
     display: block; } }
+
+.about-wrapper {
+  position: relative;
+  z-index: -2; }
 
 .skills-wrapper {
   background-color: #64707B; }
