@@ -4,16 +4,17 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "watch:sass": "node-sass sass/main.scss ./css/style.comp.css -w",
+    "watch:sass": "node-sass src/scss/main.scss ./css/style.comp.css -w",
     "fmt:js": "prettier --write ./js/script.js",
+    "devbundle:js": "webpack -w --mode development",
     "devprefix:css": "postcss -w --use autoprefixer -b \"last 5 versions\" ./css/style.comp.css -o ./css/style.css",
     "devserver": "php -S 127.0.0.1:8081 -t .",
     "browsersync": "browser-sync start --proxy 127.0.0.1:8081 --files index.php css/style.css js/script.js",
-    "start": "npm-run-all --parallel watch:sass devprefix:css devserver browsersync",
+    "start": "npm-run-all --parallel devbundle:js watch:sass devprefix:css devserver browsersync",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 5 versions\" ./css/style.comp.css -o ./css/style.prefix.css",
     "compress:css": "node-sass ./css/style.prefix.css ./css/style.css --output-style compressed",
-    "bundle:js": "webpack",
+    "bundle:js": "webpack --mode production",
     "build": "npm-run-all fmt:js bundle:js compile:sass prefix:css compress:css"
   },
   "devDependencies": {
