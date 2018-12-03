@@ -1,195 +1,190 @@
 .wrapper {
-  overflow-x: hidden;
-  position: relative;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .navbar-wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: $z-highest;
-  width: 100%;
-  transition: background-color 0.2s;
-  color: white;
-  @include respond(tab-port) {
-    flex-direction: column;
-  }
-  &--open {
-    @include respond(tab-port) {
-      border-bottom: 1px solid $color-gray-4;
-      background-color: white;
-      color: black;
-    }
-  }
-  &--waypoint-on:not(&--open) {
-    color: $color-gray-1;
-    background-color: rgba(white, 0.4);
-    border-bottom: 1px solid $color-gray-4;
-    @include respond(tab-port) {
-      border-bottom: none;
-      background-color: transparent;
-      .hamburger > span {
-        @include respond(tab-port) {
-          background-color: black;
-        }
-      }
-    }
-  }
-  &__hamburger {
-    display: none;
-    @include respond(tab-port) {
-      align-self: flex-end;
-      display: block;
-      margin-right: 3rem;
-      margin-top: 3rem;
-    }
-  }
-  &__list {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    list-style: none;
-    margin-right: 8rem;
+    position: fixed;
+    top: 0;
+    z-index: $z-highest;
+    width: 100%;
+    transition: background-color 0.2s;
+    color: white;
     @include respond(tab-port) {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      margin-right: 0;
-      color: black;
+        flex-direction: column;
     }
     &--open {
-      @include respond(tab-port) {
+        @include respond(tab-port) {
+            border-bottom: 1px solid $color-gray-4;
+            background-color: white;
+            color: black;
+        }
+    }
+    &--waypoint-on:not(&--open) {
+        color: $color-gray-1;
+        background-color: rgba(white, 0.4);
+        border-bottom: 1px solid $color-gray-4;
+        @include respond(tab-port) {
+            border-bottom: none;
+            background-color: transparent;
+            .hamburger>span {
+                @include respond(tab-port) {
+                    background-color: black;
+                }
+            }
+        }
+    }
+    &__hamburger {
+        display: none;
+        @include respond(tab-port) {
+            align-self: flex-end;
+            display: block;
+            margin-right: 3rem;
+            margin-top: 3rem;
+        }
+    }
+    &__list {
         display: flex;
-      }
+        align-items: center;
+        list-style: none;
+        margin-right: 8rem;
+        @include respond(tab-port) {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            margin-right: 0;
+            color: black;
+        }
+        &--open {
+            @include respond(tab-port) {
+                display: flex;
+            }
+        }
     }
-  }
-  &__item {
-    display: flex;
-    align-items: center;
-    @include respond(tab-port) {
-      justify-content: center;
-      width: 100%;
+    &__item {
+        display: flex;
+        align-items: center;
+        @include respond(tab-port) {
+            justify-content: center;
+            width: 100%;
+        }
+        &:not(:last-child) {
+            margin-right: 3rem;
+            @include respond(tab-port) {
+                margin-right: 0rem;
+            }
+        }
+        &>a:link,
+        &>a:visited {
+            display: inline-block;
+            position: relative;
+            height: 7rem;
+            line-height: 7rem;
+            color: inherit;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.2s;
+        }
+        &>a:hover,
+        &>a:active {
+            color: $color-primary;
+        }
+        &>a:link::after,
+        &>a:visited::after {
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            background-color: $color-primary;
+            transform: scaleX(0);
+            transition: transform 0.2s ease-out;
+            content: '';
+        }
+        &>a:hover::after,
+        &>a:active::after {
+            transform: scaleX(1);
+        }
     }
-    &:not(:last-child) {
-      margin-right: 3rem;
-      @include respond(tab-port) {
-        margin-right: 0rem;
-      }
-    }
-    & > a:link,
-    & > a:visited {
-      display: inline-block;
-      position: relative;
-      height: 7rem;
-      line-height: 7rem;
-      color: inherit;
-      font-size: 1.5rem;
-      font-weight: 700;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: color 0.2s;
-    }
-    & > a:hover,
-    & > a:active {
-      color: $color-primary;
-    }
-    & > a:link::after,
-    & > a:visited::after {
-      display: inline-block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 100%;
-      background-color: $color-primary;
-      transform: scaleX(0);
-      transition: transform 0.2s ease-out;
-      content: '';
-    }
-    & > a:hover::after,
-    & > a:active::after {
-      transform: scaleX(1);
-    }
-  }
 }
 
 .go-to-top {
-  display: none;
-  position: fixed;
-  bottom: 5rem;
-  right: 5rem;
-  &--waypoint-on {
-    display: block;
-  }
-  @include respond(tab-port) {
-    bottom: 3rem;
-    right: 3rem;
-  }
+    display: none;
+    position: fixed;
+    bottom: 5rem;
+    right: 5rem;
+    &--waypoint-on {
+        display: block;
+    }
+    @include respond(tab-port) {
+        bottom: 3rem;
+        right: 3rem;
+    }
 }
 
 .hero-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(black, 0.5),
-      rgba(black, 0.5)
-    ),
-    url(../img/hero1-min.jpg);
-  background-size: cover;
-  background-position: center;
-  &--paraxify {
-    background-attachment: fixed;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient( to bottom, rgba(black, 0.5), rgba(black, 0.5)), url(../img/hero1-min.jpg);
+    background-size: cover;
+    background-position: center;
+    &--paraxify {
+        background-attachment: fixed;
+    }
 }
 
 .about-wrapper,
 .skills-wrapper,
 .awards-wrapper,
 .works-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: $section-height;
-  padding-top: 8rem;
-  padding-bottom: 10rem;
-  background-color: white;
-  @include respond(tab-port) {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: $section-height;
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+    background-color: white;
+    @include respond(tab-port) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
 }
 
 .about-wrapper,
 .awards-wrapper,
 .works-wrapper {
-  @include respond(phone) {
-    display: block;
-  }
+    @include respond(phone) {
+        display: block;
+    }
 }
 
 .about-wrapper {
-  position: relative;
-  z-index: -2;
+    position: relative;
+    z-index: -2;
 }
 
 .skills-wrapper {
-  background-color: $color-tertiary;
+    background-color: $color-tertiary;
 }
 
 .footer-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  padding-top: 6rem;
-  padding-bottom: 3rem;
-  background-color: $color-secondary;
-  color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+    background-color: $color-secondary;
+    color: white;
 }
