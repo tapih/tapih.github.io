@@ -52,9 +52,7 @@ $hamburger-height: 20px;
 $hamburger-thickness: 2px;
 $hamburger-transition-y: $hamburger-height / 2 - $hamburger-thickness / 2;
 .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    position: relative;
     width: $hamburger-width;
     height: $hamburger-height;
     border: none;
@@ -62,23 +60,35 @@ $hamburger-transition-y: $hamburger-height / 2 - $hamburger-thickness / 2;
     background-color: transparent;
     cursor: pointer;
     &>span {
+        position: absolute;
         height: $hamburger-thickness;
         width: $hamburger-width;
         background-color: $hamburger-color;
         border-radius: 3px;
         transition: all 0.2s;
+        &:nth-child(1) {
+            top: 0;
+        }
+        &:nth-child(2) {
+            top: 50%;
+        }
+        &:nth-child(3) {
+            bottom: 0;
+        }
     }
     &--open {
-        &>span:nth-child(1) {
-            background-color: $hamburger-color-open;
-            transform: translateY($hamburger-transition-y) rotate(315deg);
-        }
-        &>span:nth-child(2) {
-            opacity: 0;
-        }
-        &>span:nth-child(3) {
-            background-color: $hamburger-color-open;
-            transform: translateY(-$hamburger-transition-y) rotate(-315deg);
+        &>span {
+            &:nth-child(1) {
+                background-color: $hamburger-color-open;
+                transform: translateY($hamburger-transition-y) rotate(315deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                background-color: $hamburger-color-open;
+                transform: translateY(-$hamburger-transition-y) rotate(-315deg);
+            }
         }
     }
 }
