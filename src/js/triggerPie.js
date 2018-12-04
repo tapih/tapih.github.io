@@ -5,7 +5,6 @@ module.exports = function() {
     for (var i = 0; i < slides.length; i++) {
       if (slides[i].classList.contains('carousel__slide--active')) {
         var pie = slides[i].querySelector('.pie');
-        console.log(pie);
         pie.setAttribute('data-animated', '');
       }
     }

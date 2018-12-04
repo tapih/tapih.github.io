@@ -104,7 +104,7 @@ eval("module.exports = function() {\n  var DOM = {\n    container: document.quer
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = function() {\n  if (isIOS()) {\n      var hero = document.querySelector('.hero-wrapper');\n      hero.classList.remove('hero-wrapper--paraxify');\n      var photo = document.querySelector('.about-container__img');\n      hero.classList.remove('about-container__img--paraxify');\n  }\n};\n\nfunction isIOS() {\n  let userAgent = window.navigator.userAgent.toLowerCase();\n  if (userAgent.match(/(iphone|ipod|ipad)/)) {\n    return true;\n  }\n  return false;\n}\n\n\n//# sourceURL=webpack:///./src/js/disableBgAttach.js?");
+eval("module.exports = function() {\n  if (isIOS()) {\n      var hero = document.querySelector('.hero-wrapper');\n      hero.classList.add('hero-wrapper--scroll');\n      var photo = document.querySelector('.about-container__img-box');\n      hero.classList.add('about-container__img-box--scroll');\n  }\n};\n\nfunction isIOS() {\n  let userAgent = window.navigator.userAgent.toLowerCase();\n  if (userAgent.match(/(iphone|ipod|ipad)/)) {\n    return true;\n  }\n  return false;\n}\n\n\n//# sourceURL=webpack:///./src/js/disableBgAttach.js?");
 
 /***/ }),
 
@@ -170,7 +170,7 @@ eval("module.exports = function() {\n    var DOM = {\n      form: document.query
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = function() {\n  var carousel = document.querySelector('.carousel');\n  var slides = document.querySelectorAll('.carousel__slide');\n  function triggerAnimate() {\n    for (var i = 0; i < slides.length; i++) {\n      if (slides[i].classList.contains('carousel__slide--active')) {\n        var pie = slides[i].querySelector('.pie');\n        console.log(pie);\n        pie.setAttribute('data-animated', '');\n      }\n    }\n  }\n  triggerAnimate();\n  carousel.addEventListener('slidemove', triggerAnimate);\n};\n\n\n//# sourceURL=webpack:///./src/js/triggerPie.js?");
+eval("module.exports = function() {\n  var carousel = document.querySelector('.carousel');\n  var slides = document.querySelectorAll('.carousel__slide');\n  function triggerAnimate() {\n    for (var i = 0; i < slides.length; i++) {\n      if (slides[i].classList.contains('carousel__slide--active')) {\n        var pie = slides[i].querySelector('.pie');\n        pie.setAttribute('data-animated', '');\n      }\n    }\n  }\n  triggerAnimate();\n  carousel.addEventListener('slidemove', triggerAnimate);\n};\n\n\n//# sourceURL=webpack:///./src/js/triggerPie.js?");
 
 /***/ }),
 
@@ -181,7 +181,7 @@ eval("module.exports = function() {\n  var carousel = document.querySelector('.c
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("module.exports = function() {\n  var wp = document.querySelector('#about');\n  var wpTop = wp.offsetTop;\n  var targets = ['navbar-wrapper', 'go-to-top'];\n  window.addEventListener('scroll', function() {\n    for (var i = 0; i < targets.length; i++) {\n      var name = targets[i];\n      var nameWp = name + '--waypoint-on';\n      var e = document.querySelector('.' + name);\n      if (e.classList.contains(nameWp)) {\n        if (window.pageYOffset <= wpTop) {\n          e.classList.remove(nameWp);\n        }\n      } else {\n        if (window.pageYOffset >= wpTop) {\n          e.classList.add(nameWp);\n        }\n      }\n    }\n  });\n};\n\n\n//# sourceURL=webpack:///./src/js/waypoint.js?");
+eval("module.exports = function() {\n  var wp = document.querySelector('#about');\n  var wpTop = wp.offsetTop;\n  var targets = ['navbar-wrapper', 'go-to-top'];\n  window.addEventListener('scroll', function() {\n    for (var i = 0; i < targets.length; i++) {\n      var name = targets[i];\n      var nameWp = name + '--waypoint-on';\n      var e = document.querySelector('.' + name);\n      var pageY = Math.round(window.pageYOffset);\n      if (e.classList.contains(nameWp)) {\n        if (pageY <= wpTop) {\n          e.classList.remove(nameWp);\n        }\n      } else {\n        if (pageY >= wpTop) {\n          console.log(window.pageYOffset, wpTop);\n          e.classList.add(nameWp);\n        }\n      }\n    }\n  });\n};\n\n\n//# sourceURL=webpack:///./src/js/waypoint.js?");
 
 /***/ })
 

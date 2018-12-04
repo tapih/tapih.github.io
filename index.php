@@ -90,7 +90,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
             <div><a class="square-arrow-up go-to-top" href="#hero"></a></div>
             <main>
                 <section id="hero">
-                    <div class="hero-wrapper hero-wrapper--paraxify">
+                    <div class="hero-wrapper">
                         <!-- background-image in CSS -->
                         <div class="hero-container">
                             <h1 class="hero-container__heading">
@@ -130,10 +130,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                     趣味はお酒と旅行と動物。
                                 </p>
                             </div>
-                            <div class="about-container__img-box">
-                                <div class="about-container__img about-container__img--paraxify">
-                                </div>
-                            </div>
+                            <div class="about-container__img-box"></div>
                         </div>
                     </div>
                 </section>
@@ -144,37 +141,6 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                         </h2>
                         <div class="carousel">
                             <div class="carousel__wrapper">
-                                <div class="carousel__slide">
-                                    <div class="card">
-                                        <h3 class="card__heading">Python</h3>
-                                        <div class="card__pie">
-                                            <div class="pie pie--python">
-                                                <div class="pie__right"></div>
-                                                <div class="pie__left"></div>
-                                                <div class="pie__center"></div>
-                                            </div>
-                                        </div>
-                                        <div class="card__description">
-                                            <div class="card__detail">
-                                                <h4>概要</h4>
-                                                <p class="card__paragraph">
-                                                    Excelでは困難な規模のデータ集計・加工やスクレイピングによるデータ収集、統計分析に利用。<br />
-                                                    また、Deep
-                                                    LearningやBoosting等の機械学習モデルをKaggle上位10%相当の性能で安定して構築。
-                                                </p>
-                                            </div>
-                                            <div class="card__keywords">
-                                                <h4>キーワード</h4>
-                                                <p class="card__paragraph">
-                                                    機械学習:
-                                                    Keras/PyTorch/scikit-learn<br />
-                                                    データ処理:
-                                                    pandas/numpy/matplotlib
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">
@@ -204,6 +170,37 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                                     View関連：JQuery / HTML5 / SCSS / React+Redux<br />
                                                     バージョン：ES5 / ES6 / TypeScript<br />
                                                     開発ツール：npm / webpack / eslint / tslint / prettier
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel__slide">
+                                    <div class="card">
+                                        <h3 class="card__heading">Python</h3>
+                                        <div class="card__pie">
+                                            <div class="pie pie--python">
+                                                <div class="pie__right"></div>
+                                                <div class="pie__left"></div>
+                                                <div class="pie__center"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card__description">
+                                            <div class="card__detail">
+                                                <h4>概要</h4>
+                                                <p class="card__paragraph">
+                                                    Excelでは困難な規模のデータ集計・加工やスクレイピングによるデータ収集、統計分析に利用。<br />
+                                                    また、Deep
+                                                    LearningやBoosting等の機械学習モデルをKaggle上位10%相当の性能で安定して構築。
+                                                </p>
+                                            </div>
+                                            <div class="card__keywords">
+                                                <h4>キーワード</h4>
+                                                <p class="card__paragraph">
+                                                    機械学習:
+                                                    Keras/PyTorch/scikit-learn<br />
+                                                    データ処理:
+                                                    pandas/numpy/matplotlib
                                                 </p>
                                             </div>
                                         </div>

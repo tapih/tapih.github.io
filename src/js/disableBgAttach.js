@@ -1,9 +1,9 @@
 module.exports = function() {
   if (isIOS()) {
       var hero = document.querySelector('.hero-wrapper');
-      hero.classList.remove('hero-wrapper--paraxify');
-      var photo = document.querySelector('.about-container__img');
-      hero.classList.remove('about-container__img--paraxify');
+      hero.classList.add('hero-wrapper--scroll');
+      var photo = document.querySelector('.about-container__img-box');
+      hero.classList.add('about-container__img-box--scroll');
   }
 };
 

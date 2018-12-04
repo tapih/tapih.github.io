@@ -1,418 +1,418 @@
 .hero-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    animation: popUp 0.8s ease 0.2s;
-    &__heading {
-        margin-bottom: 2rem;
-        font-size: 5rem;
-        font-weight: 400;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: transform 0.2s;
-        @include respond(phone) {
-            font-size: 3.5rem;
-        }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  animation: popUp 0.8s ease 0.2s;
+  &__heading {
+    margin-bottom: 2rem;
+    font-size: 5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: transform 0.2s;
+    @include respond(phone) {
+      font-size: 3.5rem;
     }
-    &__description {
-        margin-bottom: 5rem;
-        font-size: 2rem;
-        @include respond(phone) {
-            font-size: 1.6rem;
-        }
+  }
+  &__description {
+    margin-bottom: 5rem;
+    font-size: 2rem;
+    @include respond(phone) {
+      font-size: 1.6rem;
     }
+  }
 }
 
 .about-container {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  @include respond(tab-land) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  &__description {
     flex: 1;
     display: flex;
-    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 6rem;
+    margin-left: 20rem;
     @include respond(tab-land) {
-        flex-direction: column-reverse;
-        align-items: center;
+      display: block;
+      margin: 0;
+      width: 80%;
     }
-    &__description {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin-right: 6rem;
-        margin-left: 20rem;
-        @include respond(tab-land) {
-            display: block;
-            margin: 0;
-            width: 80%;
-        }
+  }
+  &__heading {
+    margin-bottom: 1.5rem;
+    font-size: 3.2rem;
+    font-weight: 300;
+    @include respond(tab-land) {
+      text-align: center;
     }
-    &__heading {
-        margin-bottom: 1.5rem;
-        font-size: 3.2rem;
-        font-weight: 300;
-        @include respond(tab-land) {
-            text-align: center;
-        }
-        @include respond(phone) {
-            font-size: 2.2rem;
-        }
-        &>span {
-            margin-left: 1.5rem;
-            font-size: 2rem;
-            @include respond(phone) {
-                font-size: 1.6rem;
-            }
-        }
+    @include respond(phone) {
+      font-size: 2.2rem;
     }
-    &__paragraph {
-        margin-bottom: 14rem;
-        word-break: break-all;
-        hyphens: auto;
-        @include respond(tab-land) {
-            margin-bottom: 0;
-        }
+    & > span {
+      margin-left: 1.5rem;
+      font-size: 2rem;
+      @include respond(phone) {
+        font-size: 1.6rem;
+      }
     }
-    &__img-box {
-        display: flex;
-        width: 40%;
-        transform: skew(-20deg) translateX(10vw);
-        overflow: hidden;
-        @include respond(tab-land) {
-            width: 20rem;
-            height: 20rem;
-            margin-bottom: 5rem;
-            border-radius: 50%;
-            background-color: transparent;
-            transform: none;
-        }
-        @include respond(phone) {
-            width: 15rem;
-            height: 15rem;
-        }
+  }
+  &__paragraph {
+    margin-bottom: 14rem;
+    word-break: break-all;
+    hyphens: auto;
+    @include respond(tab-land) {
+      margin-bottom: 0;
     }
-    &__img {
-        flex: 1;
-        background: url(../img/self-min.jpg) no-repeat;
-        background-size: 80vw auto;
-        background-position: 40vw bottom;
-        transform: skew(20deg) translateX(-10vw);
-        &--paraxify {
-            background-attachment: fixed;
-        }
-        @include respond(tab-land) {
-            width: 20rem;
-            height: 20rem;
-            background-size: cover;
-            background-position: -3rem center;
-            background-attachment: scroll;
-            transform: none;
-        }
-        @include respond(phone) {
-            width: 15rem;
-            height: 15rem;
-            background-position: -2.5rem center;
-        }
+  }
+  $img-box-height: calc(#{$section-height} - 32.5rem);
+  $img-box-width: calc((100vw - 26rem) * 0.4);
+  $border-left-thickness: calc(((100vw - 26rem) * 0.4 * 0.3));
+  &__img-box {
+    width: $img-box-width;
+    height: $img-box-height;
+    @include respond(tab-land) {
+      width: 20rem;
+      height: 20rem;
+      margin-bottom: 5rem;
+      border-radius: 50%;
+      overflow: hidden;
     }
+    @include respond(phone) {
+      width: 15rem;
+      height: 15rem;
+    }
+    &:after {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: url(../img/self-min.jpg) no-repeat;
+      background-size: 80vw auto;
+      background-position: 40vw bottom;
+      background-attachment: fixed;
+      border-left: $border-left-thickness solid white;
+      border-bottom: $img-box-height solid transparent;
+      content: '';
+      @include respond(tab-land) {
+        background-size: cover;
+        background-position: -4.5rem center;
+        background-attachment: scroll;
+        border: none;
+      }
+      @include respond(phone) {
+        background-position: -3.5rem center;
+      }
+    }
+    &--scroll:after {
+      background-attachment: scroll;
+    }
+  }
 }
 
 @-moz-document url-prefix() {
-    .about-container__img-box {
-        transform: none;
-    }
-    .about-container__img {
-        transform: none;
-    }
+  .about-container__img-box {
+    transform: none;
+  }
+  .about-container__img {
+    transform: none;
+  }
 }
 
 @supports (-ms-ime-align: auto) {
-    .about-container__img-box {
-        transform: none;
-    }
-    .about-container__img {
-        transform: none;
-    }
+  .about-container__img-box {
+    transform: none;
+  }
+  .about-container__img {
+    transform: none;
+  }
 }
 
 /* skills section */
 
 .carousel {
-    flex: 1;
-    width: 80%;
-    @include respond(phone) {
-        width: 90%;
-    }
+  flex: 1;
+  width: 80%;
+  @include respond(phone) {
+    width: 90%;
+  }
 }
 
 .card {
-    // widthはjsで調整している
-    flex: 1;
-    padding: 3rem 4rem;
-    box-shadow: 0 2px 4px 2px rgba(black, 0.2);
-    border-radius: 1px;
-    background-color: white;
+  // widthはjsで調整している
+  flex: 1;
+  padding: 3rem 4rem;
+  box-shadow: 0 2px 4px 2px rgba(black, 0.2);
+  border-radius: 1px;
+  background-color: white;
+  @include respond(phone) {
+    padding: 2.5rem 2.5rem;
+  }
+  &__pie {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
     @include respond(phone) {
-        padding: 2.5rem 2.5rem;
+      margin-bottom: 1.5rem;
     }
-    &__pie {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 4rem;
+    .pie {
+      &--python[data-animated] {
+        @include makePie(80, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
         @include respond(phone) {
-            margin-bottom: 1.5rem;
+          @include makePie(80, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
         }
-        .pie {
-            &--python[data-animated] {
-                @include makePie(80, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(80, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-            &--javascript[data-animated] {
-                @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-            &--go[data-animated] {
-                @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-            &--sql[data-animated] {
-                @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-            &--debian[data-animated] {
-                @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-            &--nodejs[data-animated] {
-                @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-            &--r[data-animated] {
-                @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-            &--excel[data-animated] {
-                @include makePie(90, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(90, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-            &--c[data-animated] {
-                @include makePie(30, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-            &--others[data-animated] {
-                @include makePie(10, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
-                @include respond(phone) {
-                    @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
-                }
-            }
-        }
-    }
-    &__heading {
-        margin-bottom: 3rem;
-        font-size: 2.8rem;
-        text-align: center;
+      }
+      &--javascript[data-animated] {
+        @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
         @include respond(phone) {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+          @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
         }
-    }
-    &__description {
-        width: 100%;
-    }
-    &__detail {
-        margin-bottom: 2rem;
+      }
+      &--go[data-animated] {
+        @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
         @include respond(phone) {
-            margin-bottom: 0.8rem;
+          @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
         }
+      }
+      &--sql[data-animated] {
+        @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+          @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
+      }
+      &--debian[data-animated] {
+        @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+          @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
+      }
+      &--nodejs[data-animated] {
+        @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+          @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
+      }
+      &--r[data-animated] {
+        @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+          @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
+      }
+      &--excel[data-animated] {
+        @include makePie(90, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+          @include makePie(90, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
+      }
+      &--c[data-animated] {
+        @include makePie(30, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+          @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
+      }
+      &--others[data-animated] {
+        @include makePie(10, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+        @include respond(phone) {
+          @include makePie(10, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+        }
+      }
     }
+  }
+  &__heading {
+    margin-bottom: 3rem;
+    font-size: 2.8rem;
+    text-align: center;
+    @include respond(phone) {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+  }
+  &__description {
+    width: 100%;
+  }
+  &__detail {
+    margin-bottom: 2rem;
+    @include respond(phone) {
+      margin-bottom: 0.8rem;
+    }
+  }
 }
 
 .awards-container {
-    list-style: none;
-    width: 80%;
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 100rem;
+  &__item {
+    display: flex;
+    width: 100%;
     margin: 0 auto;
-    max-width: 100rem;
-    &__item {
-        display: flex;
-        width: 100%;
-        margin: 0 auto;
-        @include respond(phone) {
-            flex-direction: column;
-        }
+    @include respond(phone) {
+      flex-direction: column;
     }
-    &__item:not(:last-child) {
-        margin-bottom: 1.8rem;
-        @include respond(phone) {
-            margin-bottom: 3rem;
-        }
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 1.8rem;
+    @include respond(phone) {
+      margin-bottom: 3rem;
     }
-    &__heading {
-        &>a:link,
-        &>a:visited {
-            text-decoration: none;
-            color: $color-primary;
-            font-size: 2.2rem;
-            @include respond(phone) {
-                font-size: 1.6rem;
-            }
-        }
-        &>a:hover,
-        &>a:active {
-            color: $color-primary-dark;
-        }
+  }
+  &__heading {
+    & > a:link,
+    & > a:visited {
+      text-decoration: none;
+      color: $color-primary;
+      font-size: 2.2rem;
+      @include respond(phone) {
+        font-size: 1.6rem;
+      }
     }
-    &__date {
-        width: 10rem;
+    & > a:hover,
+    & > a:active {
+      color: $color-primary-dark;
     }
-    &__description {
-        flex: 1;
-    }
+  }
+  &__date {
+    width: 10rem;
+  }
+  &__description {
+    flex: 1;
+  }
 }
 
 .photos-container {
-    &__row {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        @include respond(phone) {
-            flex-wrap: wrap;
-        }
+  &__row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    @include respond(phone) {
+      flex-wrap: wrap;
     }
-    &__item {
-        overflow: hidden;
-        background-color: black;
-        width: 25%;
-        @include respond(phone) {
-            width: 50%;
-            background-color: transparent;
-        }
-        &>img {
-            opacity: 0.5;
-            width: 100%;
-            transition: all 0.5s;
-            backface-visibility: hidden;
-            @include respond(phone) {
-                opacity: 1;
-            }
-            &:hover {
-                opacity: 1;
-                transform: scale(1.15);
-            }
-        }
+  }
+  &__item {
+    overflow: hidden;
+    background-color: black;
+    width: 25%;
+    @include respond(phone) {
+      width: 50%;
+      background-color: transparent;
     }
+    & > img {
+      opacity: 0.5;
+      width: 100%;
+      transition: all 0.5s;
+      backface-visibility: hidden;
+      @include respond(phone) {
+        opacity: 1;
+      }
+      &:hover {
+        opacity: 1;
+        transform: scale(1.15);
+      }
+    }
+  }
 }
 
 .modal-container {
-    flex: 1;
-    list-style: none;
-    width: 100%;
-    margin-bottom: 8rem;
-    &__name-box {
-        display: flex;
-        margin-bottom: 1.5rem;
-    }
-    &__email-box {
-        display: flex;
-        margin-bottom: 2rem;
-    }
-    &__message-box {
-        margin-bottom: 0.5rem;
-    }
-    &__subject {
-        font-size: 1.8rem;
-        font-weight: 700;
-        width: 10rem;
-    }
-    &__value {
-        font-size: 1.8rem;
-    }
+  flex: 1;
+  list-style: none;
+  width: 100%;
+  margin-bottom: 8rem;
+  &__name-box {
+    display: flex;
+    margin-bottom: 1.5rem;
+  }
+  &__email-box {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  &__message-box {
+    margin-bottom: 0.5rem;
+  }
+  &__subject {
+    font-size: 1.8rem;
+    font-weight: 700;
+    width: 10rem;
+  }
+  &__value {
+    font-size: 1.8rem;
+  }
 }
 
 // footer
 .footer-container {
-    display: flex;
-    width: 80%;
-    max-width: 120rem;
-    &__message {
-        flex: 1;
-        margin-right: 5rem;
-        @include respond(tab-port) {
-            margin-right: 0;
-        }
-    }
-    &__form {
-        flex: 1;
-        @include respond(tab-port) {
-            margin-bottom: 10rem;
-        }
-    }
+  display: flex;
+  width: 80%;
+  max-width: 120rem;
+  &__message {
+    flex: 1;
+    margin-right: 5rem;
     @include respond(tab-port) {
-        flex-direction: column-reverse;
+      margin-right: 0;
     }
+  }
+  &__form {
+    flex: 1;
+    @include respond(tab-port) {
+      margin-bottom: 10rem;
+    }
+  }
+  @include respond(tab-port) {
+    flex-direction: column-reverse;
+  }
 }
 
 .message-container {
-    margin-bottom: 5rem;
+  margin-bottom: 5rem;
 }
 
 .socials-container {
+  flex: 1;
+  &__icons {
     flex: 1;
-    &__icons {
-        flex: 1;
+  }
+  &__copy {
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: $color-tertiary;
+    @include respond(phone) {
+      font-size: 1rem;
+      line-height: 1.4rem;
     }
-    &__copy {
-        font-family: sans-serif;
-        font-size: 1.2rem;
-        color: $color-tertiary;
-        @include respond(phone) {
-            font-size: 1rem;
-            line-height: 1.4rem;
-        }
-    }
+  }
 }
 
 .social-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin-bottom: 4rem;
-    &__item {
-        margin-right: 1.5rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+  &__item {
+    margin-right: 1.5rem;
+  }
+  &__link {
+    &:link,
+    &:visited {
+      display: flex;
+      align-items: center;
+      margin-right: 0.5rem;
+      font-size: 3rem;
+      color: $color-tertiary;
+      text-decoration: none;
+      transition: color 0.2s;
     }
-    &__link {
-        &:link,
-        &:visited {
-            display: flex;
-            align-items: center;
-            margin-right: 0.5rem;
-            font-size: 3rem;
-            color: $color-tertiary;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        &--facebook:hover {
-            color: #3b5998;
-        }
-        &--instagram:hover {
-            color: #517fa4;
-        }
-        &--github:hover {
-            color: #181717;
-        }
+    &--facebook:hover {
+      color: #3b5998;
     }
+    &--instagram:hover {
+      color: #517fa4;
+    }
+    &--github:hover {
+      color: #181717;
+    }
+  }
 }

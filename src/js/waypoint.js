@@ -7,12 +7,14 @@ module.exports = function() {
       var name = targets[i];
       var nameWp = name + '--waypoint-on';
       var e = document.querySelector('.' + name);
+      var pageY = Math.round(window.pageYOffset);
       if (e.classList.contains(nameWp)) {
-        if (window.pageYOffset <= wpTop) {
+        if (pageY <= wpTop) {
           e.classList.remove(nameWp);
         }
       } else {
-        if (window.pageYOffset >= wpTop) {
+        if (pageY >= wpTop) {
+          console.log(window.pageYOffset, wpTop);
           e.classList.add(nameWp);
         }
       }

@@ -482,7 +482,7 @@ $hamburger-transition-y: $hamburger-height / 2 - $hamburger-thickness / 2;
     }
     &__btn {
         margin: 0 0.5rem;
-        padding: 1rem 3rem;
+        padding: 1rem 2.4rem;
         border: 3px solid $color-primary;
         outline: none;
         &--submit {
@@ -639,6 +639,7 @@ $x-color: $color-secondary;
         margin-bottom: 2rem;
         padding: 0.8rem 1.5rem;
         border: 2px solid white;
+        border-radius: 0;
         background-color: transparent;
         color: inherit;
         outline: none;
