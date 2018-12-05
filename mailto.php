@@ -49,7 +49,13 @@ function validateEmail($email)
 function mailToMe($addressFrom, $name, $senderEmail, $message, $myEmail)
 {
     $subject = "[{$name}]お問い合わせ";
-    $body = "[お名前]\n{$name}\n[アドレス]\n{$email}\n[メッセージ]\n{$message}";
+    $body = "";
+    $body .= "[お名前]\n";
+    $body .= "{$name}\n";
+    $body .= "[アドレス]\n";
+    $body .= "{$senderEmail}\n";
+    $body .= "[メッセージ]\n";
+    $body .= "{$message}\n";
     $headers = '';
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
@@ -64,26 +70,30 @@ function mailToMe($addressFrom, $name, $senderEmail, $message, $myEmail)
 function mailToSender($addressFrom, $name, $email, $message)
 {
     $subject = "[村岡]お問い合わせありがとうございます";
-    $body = " ==========================================\n
-                    このメールは自動配信されております。\n
-                    セキュリティ対策のため、返信は他のgmailアドレスから行います。
-                    返信まで今しばらくお待ち下さい。\n
-                    なお、村岡からの返信前に追加のメッセージがある場合は、\n
-                    このメールに返信していただいて構いません。\n
-                    ==========================================\n\n
-                    {$name} 様\n\n
-                    この度はお問い合わせいただきまして、誠にありがとうございます。\n
-                    以下の内容でメッセージを送信しておりますので、ご確認ください。\n\n
-                    ------------------------------------------\n
-                    [お名前]\n
-                    {$name}\n
-                    [アドレス]\n
-                    {$email}\n
-                    [メッセージ]\n
-                    {$message}\n
-                    ------------------------------------------\n\n
-                    村岡 宏是\n
-                    Hiroshi Muraoka";
+    $body = "";
+    $body .= " ==========================================\n";
+    $body .= "このメールは自動配信されております。\n";
+    $body .= "返信まで今しばらくお待ち下さい。\n";
+    $body .= "なお、村岡からの返信前に追加のメッセージがある場合は、\n";
+    $body .= "このメールに返信していただいて構いません。\n";
+    $body .= "==========================================\n";
+    $body .= "\n";
+    $body .= "{$name} 様\n";
+    $body .= "\n";
+    $body .= "この度はお問い合わせいただきまして、誠にありがとうございます。\n";
+    $body .= "以下の内容でメッセージを送信しておりますので、ご確認ください。\n";
+    $body .= "\n";
+    $body .= "------------------------------------------\n";
+    $body .= "[お名前]\n";
+    $body .= "{$name}\n";
+    $body .= "[アドレス]\n";
+    $body .= "{$email}\n";
+    $body .= "[メッセージ]\n";
+    $body .= "{$message}\n";
+    $body .= "------------------------------------------\n";
+    $body .= "\n";
+    $body .= "村岡 宏是\n";
+    $body .= "Hiroshi Muraoka\n";
     $headers = '';
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
