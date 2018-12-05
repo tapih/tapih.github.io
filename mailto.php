@@ -4,16 +4,6 @@ define("TOKEN_FIELD_NAME", 'csrf_token');
 define('CSRF_TOKEN_EXPIRE', 30 * 60); // 30m
 // define('CSRF_TOKENS', 5);
 
-function readConfig()
-{
-    $mode = getenv('PHP_PORTFOLIO_MODE');
-    if ($mode === 'production') {
-        return parse_ini_file('./config/prod.ini');
-    } else {
-        return parse_ini_file('./config/devel.ini');
-    }
-}
-
 function checkToken($session, $post)
 {
     return (
@@ -59,17 +49,11 @@ function validateEmail($email)
 function mailToMe($addressFrom, $name, $senderEmail, $message, $myEmail)
 {
     $subject = "[{$name}]お問い合わせ";
-    $message = "<html>
-            <body>
-                <p>{$name}</p>
-                <p>{$senderEmail}</p>
-                <p>{$message}</p>
-            </body>
-        </html>";
+    $message = "{$name}\n{$senderEmail}\n{$message}";
     $headers = '';
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
-    $headers .= 'Content-Type: text/html; charset=UTF-8';
+    $headers .= 'Content-Type: text/plain; charset=UTF-8';
     $wasSuccessful = mail($myEmail, $subject, $message, $headers);
     if (!$wasSuccessful) {
         return error_get_last()['message'];
@@ -79,43 +63,29 @@ function mailToMe($addressFrom, $name, $senderEmail, $message, $myEmail)
 
 function mailToSender($addressFrom, $name, $email, $message)
 {
-    $subject = "[村岡宏是]お問い合わせありがとうございます";
-    $message = "<html>
-            <body>
-                <p>
-                    ==========================================<br>
-                    このメールは自動配信されております。<br>
-                    セキュリティ対策のため、返信は他のgmailアドレスから行います。<br>
-                    返信まで今しばらくお待ち下さい。<br>
-                    なお、村岡からの返信前に追加のメッセージがある場合は、<br>
-                    このメールに返信していただいて構いません。<br>
-                    ==========================================<br>
-                </p>
-                <h2>
-                    {$name} 様
-                </h2>
-                <p>
-                    この度はお問い合わせいただきまして、誠にありがとうございます。<br>
-                    以下の内容でメッセージを送信しておりますので、ご確認ください。<br>
-                </p>
-                <p>
-                    ------------------------------------------<br>
-                    [お名前] {$name}<br>
-                    [アドレス] {$email}<br>
-                    [メッセージ]<br>
-                    {$message}
-                    ------------------------------------------<br>
-                </p>
-                <p>
-                    村岡 宏是<br>
-                    Hiroshi Muraoka
-                </p>
-            </body>
-        </html>";
+    $subject = "[村岡]お問い合わせありがとうございます";
+    $message = " ==========================================\n
+                    このメールは自動配信されております。\n
+                    セキュリティ対策のため、返信は他のgmailアドレスから行います。
+                    返信まで今しばらくお待ち下さい。\n
+                    なお、村岡からの返信前に追加のメッセージがある場合は、\n
+                    このメールに返信していただいて構いません。\n
+                    ==========================================\n\n
+                    {$name} 様\n\n
+                    この度はお問い合わせいただきまして、誠にありがとうございます。\n
+                    以下の内容でメッセージを送信しておりますので、ご確認ください。\n\n
+                    ------------------------------------------\n
+                    [お名前] {$name}\n
+                    [アドレス] {$email}\n
+                    [メッセージ]\n
+                    {$message}\n
+                    ------------------------------------------\n\n
+                    村岡 宏是\n
+                    Hiroshi Muraoka";
     $headers = '';
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
-    $headers .= 'Content-Type: text/html; charset=UTF-8';
+    $headers .= 'Content-Type: text/plain; charset=UTF-8';
     $wasSuccessful = mail($email, $subject, $message, $headers);
     if (!$wasSuccessful) {
         return error_get_last()['message'];
@@ -143,7 +113,7 @@ function h($s)
 }
 
 // mode
-$config = readConfig();
+$config = parse_ini_file('./config.ini');
 $host = $config['hostname'];
 $referer = $config['referer'];
 $addressFromServer = $config['addressFromServer'];
