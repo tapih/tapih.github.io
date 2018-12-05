@@ -49,12 +49,12 @@ function validateEmail($email)
 function mailToMe($addressFrom, $name, $senderEmail, $message, $myEmail)
 {
     $subject = "[{$name}]お問い合わせ";
-    $message = "{$name}\n{$senderEmail}\n{$message}";
+    $body = "[お名前]\n{$name}\n[アドレス]\n{$email}\n[メッセージ]\n{$message}";
     $headers = '';
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
     $headers .= 'Content-Type: text/plain; charset=UTF-8';
-    $wasSuccessful = mail($myEmail, $subject, $message, $headers);
+    $wasSuccessful = mail($myEmail, $subject, $body, $headers);
     if (!$wasSuccessful) {
         return error_get_last()['message'];
     }
@@ -64,7 +64,7 @@ function mailToMe($addressFrom, $name, $senderEmail, $message, $myEmail)
 function mailToSender($addressFrom, $name, $email, $message)
 {
     $subject = "[村岡]お問い合わせありがとうございます";
-    $message = " ==========================================\n
+    $body = " ==========================================\n
                     このメールは自動配信されております。\n
                     セキュリティ対策のため、返信は他のgmailアドレスから行います。
                     返信まで今しばらくお待ち下さい。\n
@@ -75,8 +75,10 @@ function mailToSender($addressFrom, $name, $email, $message)
                     この度はお問い合わせいただきまして、誠にありがとうございます。\n
                     以下の内容でメッセージを送信しておりますので、ご確認ください。\n\n
                     ------------------------------------------\n
-                    [お名前] {$name}\n
-                    [アドレス] {$email}\n
+                    [お名前]\n
+                    {$name}\n
+                    [アドレス]\n
+                    {$email}\n
                     [メッセージ]\n
                     {$message}\n
                     ------------------------------------------\n\n
@@ -86,7 +88,7 @@ function mailToSender($addressFrom, $name, $email, $message)
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
     $headers .= 'Content-Type: text/plain; charset=UTF-8';
-    $wasSuccessful = mail($email, $subject, $message, $headers);
+    $wasSuccessful = mail($email, $subject, $body, $headers);
     if (!$wasSuccessful) {
         return error_get_last()['message'];
     }
