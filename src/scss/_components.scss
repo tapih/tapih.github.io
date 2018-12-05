@@ -385,10 +385,16 @@ $hamburger-transition-y: $hamburger-height / 2 - $hamburger-thickness / 2;
             font-size: $font-size;
             font-weight: 700;
             opacity: 0;
-            animation: fadeIn $anime-half-duration;
+            transform: translateY(20px);
+            animation: slideIn $anime-half-duration;
             animation-delay: $anime-half-duration;
             animation-fill-mode: forwards;
             content: '#{$percentage}%';
+        }
+        &--disabled::before {
+            opacity: 1;
+            transform: translateY(0);
+            animation: none;
         }
     }
 }
@@ -427,10 +433,10 @@ $hamburger-transition-y: $hamburger-height / 2 - $hamburger-thickness / 2;
     animation: rotate-left-pie-#{$percentage} $half-duration ease-out $half-duration;
 }
 
-@keyframes fadeIn {
+@keyframes slideIn {
     0% {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
