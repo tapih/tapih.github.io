@@ -677,7 +677,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                             </h3>
                             <form
                                 class="contact-form"
-                                action="/mailTo.php"
+                                action="/mailto.php"
                                 method="POST"
                             >
                                 <input

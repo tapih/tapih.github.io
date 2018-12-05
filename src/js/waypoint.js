@@ -14,7 +14,6 @@ module.exports = function() {
         }
       } else {
         if (pageY >= wpTop) {
-          console.log(window.pageYOffset, wpTop);
           e.classList.add(nameWp);
         }
       }
