@@ -56,30 +56,67 @@ function validateEmail($email)
     }
 }
 
-function mailToAdmin($addressFrom, $addressTo)
+function mailToMe($addressFrom, $name, $senderEmail, $message, $myEmail)
 {
-    $subject = 'TEST MAIL';
-    $message = '<html><body>tapitapi</body></html>';
+    $subject = "[{$name}]お問い合わせ";
+    $message = "<html>
+            <body>
+                <p>{$name}</p>
+                <p>{$senderEmail}</p>
+                <p>{$message}</p>
+            </body>
+        </html>";
     $headers = '';
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
     $headers .= 'Content-type: text/html; charset=UTF-8';
-    $wasSuccessful = mail($addressTo, $subject, $message, $headers);
+    $wasSuccessful = mail($myEmail, $subject, $message, $headers);
     if (!$wasSuccessful) {
         return error_get_last()['message'];
     }
     return '';
 }
 
-function mailToServer($addressFrom, $addressTo)
+function mailToSender($addressFrom, $name, $email, $message)
 {
-    $subject = 'TEST MAIL';
-    $message = '<html><body>tapitapi</body></html>';
+    $subject = "[村岡宏是]お問い合わせありがとうございます";
+    $message = "<html>
+            <body>
+                <p>
+                    ==========================================<br>
+                    このメールは自動配信されております。<br>
+                    セキュリティ対策のため、返信は他のgmailアドレスから行います。<br>
+                    返信まで今しばらくお待ち下さい。<br>
+                    なお、村岡からの返信前に追加のメッセージがある場合は、<br>
+                    このメールに返信していただいて構いません。<br>
+                    ==========================================<br>
+                </p>
+                <h2>
+                    {$name} 様
+                </h2>
+                <p>
+                    この度はお問い合わせいただきまして、誠にありがとうございます。<br>
+                    以下の内容でメッセージを送信しておりますので、ご確認ください。<br>
+                </p>
+                <p>
+                    ------------------------------------------<br>
+                    [お名前] {$name}<br>
+                    [アドレス] {$email}<br>
+                    [メッセージ]<br>
+                    {$message}
+                    ------------------------------------------<br>
+                </p>
+                <p>
+                    村岡 宏是<br>
+                    Hiroshi Muraoka
+                </p>
+            </body>
+        </html>";
     $headers = '';
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
     $headers .= 'Content-type: text/html; charset=UTF-8';
-    $wasSuccessful = mail($addressTo, $subject, $message, $headers);
+    $wasSuccessful = mail($email, $subject, $message, $headers);
     if (!$wasSuccessful) {
         return error_get_last()['message'];
     }
@@ -110,7 +147,7 @@ $config = readConfig();
 $host = $config['hostname'];
 $referer = $config['referer'];
 $addressFromServer = $config['addressFromServer'];
-$addressToAdmin = $config['addressToAdmin'];
+$myEmail = $config['myEmail'];
 
 // security
 if (!checkToken($_SESSION, $_POST)) {
@@ -153,13 +190,13 @@ if (count($validationError) > 0) {
 }
 
 // // send mail
-if (mailToAdmin($addressFromServer, $addressToAdmin) !== '') {
-    sendResponse(501, 'Failed to send mail to admin');
+if (mailToMe($addressFromServer, $name, $email, $message, $myEmail) !== '') {
+    sendResponse(501, 'Failed to send email to admin');
     exit;
 }
 
-if (mailToSender($addressFromServer, $email)) {
-    sendResponse(501, 'Failed to send mail to sender');
+if (mailToSender($addressFromServer, $name, $email, $message) !== '') {
+    sendResponse(501, 'Failed to send confirmation email to you');
     exit;
 }
 
