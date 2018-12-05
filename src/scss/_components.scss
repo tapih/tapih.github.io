@@ -543,9 +543,6 @@ $x-color: $color-secondary;
             animation: none;
         }
     }
-    &__message {
-        font-size: 2rem;
-    }
     &__draw {
         &--success {
             opacity: 1;
@@ -654,9 +651,9 @@ $x-color: $color-secondary;
         overflow: auto;
     }
     &__btn {
-        width: 12rem;
         margin-right: 1rem;
-        border-width: 2px; // padding: 1rem 2rem;
+        border-width: 2px;
+        padding: 1.5rem 2.5rem;
         &:hover,
         &:active {
             border-width: 2px;

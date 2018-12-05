@@ -6,8 +6,8 @@ define('CSRF_TOKEN_EXPIRE', 30 * 60); // 30m
 
 function readConfig()
 {
-    $mode = getopt('mode');
-    if ($mode === 'prod') {
+    $mode = getenv('PHP_PORTFOLIO_MODE');
+    if ($mode === 'production') {
         return parse_ini_file('./config/prod.ini');
     } else {
         return parse_ini_file('./config/devel.ini');
@@ -69,7 +69,7 @@ function mailToMe($addressFrom, $name, $senderEmail, $message, $myEmail)
     $headers = '';
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
-    $headers .= 'Content-type: text/html; charset=UTF-8';
+    $headers .= 'Content-Type: text/html; charset=UTF-8';
     $wasSuccessful = mail($myEmail, $subject, $message, $headers);
     if (!$wasSuccessful) {
         return error_get_last()['message'];
@@ -115,7 +115,7 @@ function mailToSender($addressFrom, $name, $email, $message)
     $headers = '';
     $headers .= 'From: ' . $addressFrom;
     $headers .= '\r\n';
-    $headers .= 'Content-type: text/html; charset=UTF-8';
+    $headers .= 'Content-Type: text/html; charset=UTF-8';
     $wasSuccessful = mail($email, $subject, $message, $headers);
     if (!$wasSuccessful) {
         return error_get_last()['message'];
@@ -154,7 +154,6 @@ if (!checkToken($_SESSION, $_POST)) {
     sendResponseMessage(401, 'Invlalid Form token was sent');
     exit;
 }
-unset($_POST[TOKEN_FIELD_NAME]);
 
 if (!checkReferer($referer)) {
     sendResponseMessage(401, 'Form was sent from invalid referer ' . $_SERVER['HTTP_REFERER']);
@@ -201,6 +200,7 @@ if (mailToSender($addressFromServer, $name, $email, $message) !== '') {
 }
 
 if (sendResponseMessage(200, 'Form was sent successfully')) {
+    unset($_POST[TOKEN_FIELD_NAME]);
     unset($_SESSION[TOKEN_FIELD_NAME]);
     exit;
 }

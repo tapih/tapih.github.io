@@ -590,21 +590,20 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                 <div class="modal__outer">
                     <div class="modal__inner">
                         <div class="modal__state modal__state--before">
-                            <div class="modal-container">
-                                <div class="modal-container__name-box">
-                                    <span class="modal-container__subject">Name</span>
-                                    <span class="modal-container__value modal-container__value--name"></span>
-                                </div>
-                                <div class="modal-container__email-box">
-                                    <span class="modal-container__subject">Email</span>
-                                    <span class="modal-container__value modal-container__value--email"></span>
-                                </div>
-                                <div class="modal-container__message-box">
-                                    <span class="modal-container__subject">Message</span>
-                                </div>
-                                <div class="modal-container__value modal-container__value--message">
-                                </div>
-                            </div>
+                            <ul class="modal-container">
+                                <li class="modal-container__item">
+                                    <h4 class="modal-container__subject">Name</h4>
+                                    <p class="modal-container__value modal-container__value--name"></p>
+                                </li>
+                                <li class="modal-container__item">
+                                    <h4 class="modal-container__subject">Email</h4>
+                                    <p class="modal-container__value modal-container__value--email"></p>
+                                </li>
+                                <li class="modal-container__item">
+                                    <h4 class="modal-container__subject">Message</h4>
+                                    <p class="modal-container__value modal-container__value--message"></p>
+                                </li>
+                            </ul>
                             <div class="modal__btns">
                                 <button class="modal__btn modal__btn--submit">Submit</button>
                                 <button class="modal__btn modal__btn--cancel">Cancel</button>
