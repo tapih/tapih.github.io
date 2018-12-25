@@ -296,9 +296,9 @@
         flex: 1;
     }
     &__paragraph {
-        &>span {
-            border-bottom: 1px solid black;
-        }
+        word-break: break-all;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
 
