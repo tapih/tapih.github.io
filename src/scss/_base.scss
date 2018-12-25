@@ -1,17 +1,16 @@
 html {
-    font-size: 62.5%; // chromeとfirefoxだけだけどなくても困らないので使う
-    scroll-behavior: smooth;
+    font-size: 62.5%;
+    scroll-behavior: smooth; // chromeとfirefoxだけだけどなくても困らないので使う
 }
 
 body {
-    font-size: 1.6rem;
-    line-height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 150%;
     font-family: 'Roboto Condensed', 'Noto Sans', sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
     @include respond(phone) {
         font-size: 1.3rem;
-        line-height: 2rem;
     }
 }
 

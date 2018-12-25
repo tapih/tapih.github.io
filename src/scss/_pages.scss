@@ -114,6 +114,8 @@
     }
 }
 
+/* for firefox */
+
 @-moz-document url-prefix() {
     .about-container__img-box {
         transform: none;
@@ -122,6 +124,8 @@
         transform: none;
     }
 }
+
+/* for edge */
 
 @supports (-ms-ime-align: auto) {
     .about-container__img-box {
@@ -179,9 +183,9 @@
                 }
             }
             &--sql[data-animated] {
-                @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--debian[data-animated] {
@@ -191,9 +195,9 @@
                 }
             }
             &--nodejs[data-animated] {
-                @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie(30, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--r[data-animated] {
@@ -242,7 +246,8 @@
     }
 }
 
-.awards-container {
+.awards-container,
+.works-container {
     list-style: none;
     width: 80%;
     margin: 0 auto;
@@ -262,6 +267,7 @@
         }
     }
     &__heading {
+        margin-bottom: .4rem;
         &>a:link,
         &>a:visited {
             text-decoration: none;
@@ -275,12 +281,24 @@
         &>a:active {
             color: $color-primary-dark;
         }
+        &>span {
+            font-size: 2.2rem;
+            @include respond(phone) {
+                font-size: 1.6rem;
+            }
+        }
     }
     &__date {
+        margin-top: 1px;
         width: 10rem;
     }
     &__description {
         flex: 1;
+    }
+    &__paragraph {
+        &>span {
+            border-bottom: 1px solid black;
+        }
     }
 }
 

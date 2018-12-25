@@ -220,9 +220,8 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                             <div class="card__detail">
                                                 <h4>概要</h4>
                                                 <p class="card__paragraph">
-                                                    RailsベースのフルスタックフレームワークによるWebアプリケーションの構築。<br />
-                                                    パスワード認証、OAuth2認証を利用したREST
-                                                    APIの構築。
+                                                    認証機能付きのフルスタックフレームワークによるWebアプリケーションや
+                                                    REST APIの構築。
                                                 </p>
                                             </div>
                                             <div class="card__keywords">
@@ -239,7 +238,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                 <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">
-                                            PostgresSQL
+                                            PostgreSQL
                                         </h3>
                                         <div class="card__pie">
                                             <div class="pie pie--sql">
@@ -407,7 +406,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                             <div class="card__detail">
                                                 <h4>概要</h4>
                                                 <p class="card__paragraph">
-                                                    Webセキュリティ、マルチブラウザ対応、デザインに関して鋭意学習中。
+                                                    Webセキュリティ、マルチブラウザ対応、デザインなどなどに関して鋭意学習中。
                                                 </p>
                                             </div>
                                             <div class="card__keywords"></div>
@@ -583,6 +582,65 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                 <section id="works">
                     <div class="works-wrapper">
                         <h2 class="section-heading">Works</h2>
+                        <ul class="works-container">
+                            <li class="works-container__item">
+                                <div class="works-container__date">
+                                    2018年11⽉
+                                </div>
+                                <div class="works-container__description">
+                                    <h3 class="works-container__heading">
+                                        <span
+                                            href="http://image-net.org/challenges/LSVRC/2012/results.html"
+                                        >
+                                            This Page - H. Muraoka's Portfolio Page
+                                        </span>
+                                    </h3>
+                                    <p class="works-container__paragraph">
+                                        ポートフォリオサイト。<br>
+                                        勉強のためにフォントとアイコン以外の外部ファイル依存なしのフルスクラッチで実装。<br>
+                                        使用言語はPHP7+SCSS+ES5。フロントサーバにnginx、アップストリームにApacheで運用中(Raspberry PI)。
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="works-container__item">
+                                <div class="works-container__date">
+                                    2018年12⽉
+                                </div>
+                                <div class="works-container__description">
+                                    <h3 class="works-container__heading">
+                                        <a
+                                            href="https://gxxgle.kgjoi.com/?term=qiita"
+                                        >
+                                            Gxxgle - Search Engine
+                                        </a>
+                                    </h3>
+                                    <p class="works-container__paragraph">
+                                        勉強のために作ったどこかで見た検索サイト。<br>
+                                        フロントエンドにHTML5+SCSS+ES5、バックエンドにGo(Revel)+PostgreSQLを利用。<br>
+                                        ホームページと同じRaspberry PI上で運用中(停止予定)。
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="works-container__item">
+                                <div class="works-container__date">
+                                    2018年12⽉
+                                </div>
+                                <div class="works-container__description">
+                                    <h3 class="works-container__heading">
+                                        <a
+                                            href="https://tapitube.kgjoi.com"
+                                        >
+                                            Tapitube - Online Video Sharing Service
+                                        </a>
+                                    </h3>
+                                    <p class="works-container__paragraph">
+                                        勉強のために作ったどこかで見た動画共有サイト。<br>
+                                        フロントエンドにHTML5+SCSS+jQuery(npm+webpack)、バックエンドにGo(Revel)+PostgreSQLを利用。<br>
+                                        暫定的にホームページと同じRaspberry PI上で運用中(ユーザ登録は停止中)。
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </section>
             </main>
@@ -647,18 +705,12 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                 <div class="socials-container__icons">
                                     <ul class="social-links">
                                         <li class="social-links__item">
-                                            <a class="social-links__link social-links__link--github"
-                                                href="#">
-                                                <i class="icon ion-logo-github"></i>
-                                            </a>
-                                        </li>
-                                        <li class="social-links__item">
                                             <a class="social-links__link social-links__link--facebook" href="https://www.facebook.com/h.muraoka714">
                                                 <i class="icon ion-logo-facebook"></i>
                                             </a>
                                         </li>
                                         <li class="social-links__item">
-                                            <a class="social-links__link social-links__link--instagram" href="#">
+                                            <a class="social-links__link social-links__link--instagram" href="https://www.instagram.com/hhhmuraoooka/">
                                                 <i class="icon ion-logo-instagram"></i>
                                             </a>
                                         </li>
