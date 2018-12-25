@@ -518,63 +518,39 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                 <div id="photos">
                     <div class="photos-container">
                         <ul class="photos-container__row">
-                            <li class="photos-container__item">
-                                <img
-                                    class="photos-container__img"
-                                    data-src="/img/photos-11-min.jpg"
-                                    alt="Victria Falls"
-                                />
+                            <li class="photos-container__img"
+                                data-src="/img/photos-11-min.jpg"
+                                data-alt="Victria Falls">
                             </li>
-                            <li class="photos-container__item">
-                                <img
-                                    class="photos-container__img"
-                                    data-src="/img/photos-12-min.jpg"
-                                    alt="Navagio"
-                                />
+                            <li class="photos-container__img"
+                                data-src="/img/photos-12-min.jpg"
+                                data-alt="Navagio">
                             </li>
-                            <li class="photos-container__item">
-                                <img
-                                    class="photos-container__img"
-                                    data-src="/img/photos-13-min.jpg"
-                                    alt="Sepilok"
-                                />
+                            <li class="photos-container__img"
+                                data-src="/img/photos-13-min.jpg"
+                                data-alt="Sepilok">
                             </li>
-                            <li class="photos-container__item">
-                                <img
-                                    class="photos-container__img"
-                                    data-src="/img/photos-14-min.jpg"
-                                    alt="Kas"
-                                />
+                            <li class="photos-container__img"
+                                data-src="/img/photos-14-min.jpg"
+                                data-alt="Kas">
                             </li>
                         </ul>
                         <ul class="photos-container__row">
-                            <li class="photos-container__item">
-                                <img
-                                    class="photos-container__img"
-                                    data-src="/img/photos-21-min.jpg"
-                                    alt="Kazanraku"
-                                />
+                            <li class="photos-container__img"
+                                data-src="/img/photos-21-min.jpg"
+                                data-alt="Kazanraku">
                             </li>
-                            <li class="photos-container__item">
-                                <img
-                                    class="photos-container__img"
-                                    data-src="/img/photos-22-min.jpg"
-                                    alt="San Cristbal"
-                                />
+                            <li class="photos-container__img"
+                                data-src="/img/photos-22-min.jpg"
+                                data-alt="San Cristbal">
                             </li>
-                            <li class="photos-container__item">
-                                <img
-                                    class="photos-container__img"
-                                    data-src="/img/photos-23-min.jpg"
-                                    alt="Sahara"
-                                />
+                            <li class="photos-container__img"
+                                data-src="/img/photos-23-min.jpg"
+                                data-alt="Sahara">
                             </li>
-                            <li class="photos-container__item">
-                                <img
-                                    class="photos-container__img"
-                                    data-src="/img/photos-24-min.jpg"
-                                    alt="Machu Pichu"
-                                />
+                            <li class="photos-container__img"
+                                data-src="/img/photos-24-min.jpg"
+                                data-alt="Machu Pichu">
                             </li>
                         </ul>
                     </div>
@@ -598,7 +574,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                     <p class="works-container__paragraph">
                                         ポートフォリオサイト。<br>
                                         勉強のためにフォントとアイコン以外の外部ファイル依存なしのフルスクラッチで実装。<br>
-                                        使用言語はPHP7+SCSS+ES5。フロントサーバにnginx、アップストリームにApacheで運用中(Raspberry PI)。
+                                        使用言語はPHP7+SCSS+ES5。フロントサーバにnginx、アップストリームにApacheを利用してRaspberry PI上で運用中。
                                     </p>
                                 </div>
                             </li>
@@ -772,6 +748,6 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                 </div>
             </footer>
         </div>
-        <script src="/js/script.js"></script>
+        <script async src="/js/script.js"></script>
     </body>
 </html>

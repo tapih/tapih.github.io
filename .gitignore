@@ -3,3 +3,4 @@ img/notused
 css/*.css
 js/*.js
 config.ini
+*.gz
