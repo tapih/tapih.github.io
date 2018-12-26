@@ -7,6 +7,16 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
 <!DOCTYPE html>
 <html lang="ja">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131373055-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-131373055-1');
+        </script>
+
         <!-- meta -->
         <title>Hiroshi Muraoka</title>
 
@@ -585,13 +595,13 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                 <div class="works-container__description">
                                     <h3 class="works-container__heading">
                                         <a
-                                            href="https://gxxgle.kgjoi.com/?term=qiita"
+                                            href="https://gxxgle.kgjoi.com/search?term=qiita"
                                         >
                                             Gxxgle - Search Engine
                                         </a>
                                     </h3>
                                     <p class="works-container__paragraph">
-                                        勉強のために作ったどこかで見た検索サイト。<br>
+                                        勉強のために作ったどこかで見たような検索サイト。<br>
                                         フロントエンドにHTML5+SCSS+ES5、バックエンドにGo(Revel)+PostgreSQLを利用。<br>
                                         ホームページと同じRaspberry PI上で運用中(停止予定)。
                                     </p>
@@ -612,7 +622,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                     <p class="works-container__paragraph">
                                         勉強のために作ったどこかで見た動画共有サイト。<br>
                                         フロントエンドにHTML5+SCSS+jQuery(npm+webpack)、バックエンドにGo(Revel)+PostgreSQLを利用。<br>
-                                        暫定的にホームページと同じRaspberry PI上で運用中(ユーザ登録は停止中)。
+                                        暫定的にホームページと同じRaspberry PI上で運用中(リソース枯渇につき、動画のアップロードは停止中)。
                                     </p>
                                 </div>
                             </li>
