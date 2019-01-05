@@ -295,7 +295,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                                 <p class="card__paragraph">
                                                     各種ツール：Git / Vim /
                                                     Screen / Bash / VSCode /
-                                                    nginx
+                                                    nginx / CircleCI / Docker
                                                 </p>
                                             </div>
                                         </div>
@@ -758,6 +758,6 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                 </div>
             </footer>
         </div>
-        <script async src="/js/script.js"></script>
+        <script src="/js/script.js"></script>
     </body>
 </html>
