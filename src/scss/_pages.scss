@@ -24,6 +24,17 @@
 }
 
 .about-container {
+    $desc-box-margin-right: 6rem;
+    $desc-box-margin-left: 20rem;
+    $desc-box-margin-hori: calc(#{$desc-box-margin-right}+#{$desc-box-margin-left});
+    $img-box-width-pct: 0.4;
+    $img-box-slant-pct: 0.3;
+
+    /* TODO: boxの左上斜めカットをborderで作成しており、幅、高さを%指定できないので計算して設定 */
+    $img-box-height: calc(#{$section-height} - 32.5rem); // 32.5remはセクション見出しの大きさと上下余白の合計
+    $img-box-width: calc((100vw - #{$desc-box-margin-hori}) * #{$img-box-width-pct});
+    $border-left-thickness: calc(#{$img-box-width} * #{$img-box-slant-pct});
+
     flex: 1;
     display: flex;
     width: 100%;
@@ -36,8 +47,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-right: 6rem;
-        margin-left: 20rem;
+        margin-right: $desc-box-margin-right;
+        margin-left: $desc-box-margin-left;
         @include respond(tab-land) {
             display: block;
             margin: 0;
@@ -70,9 +81,7 @@
             margin-bottom: 0;
         }
     }
-    $img-box-height: calc(#{$section-height} - 32.5rem);
-    $img-box-width: calc((100vw - 26rem) * 0.4);
-    $border-left-thickness: calc(((100vw - 26rem) * 0.4 * 0.3));
+
     &__img-box {
         width: $img-box-width;
         height: $img-box-height;
@@ -92,8 +101,8 @@
             height: 100%;
             display: block;
             background: url(../img/self-min.jpg) no-repeat;
-            background-size: 80vw auto;
-            background-position: 40vw bottom;
+            background-size: 70vw auto;
+            background-position: 50vw bottom;
             background-attachment: fixed;
             border-left: $border-left-thickness solid white;
             border-bottom: $img-box-height solid transparent;
@@ -104,7 +113,7 @@
                 background-attachment: scroll;
                 border: none;
             }
-            @include respond(phone) {
+            @include respond(ph7ne) {
                 background-position: -3.5rem center;
             }
         }
