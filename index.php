@@ -155,9 +155,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                     <div class="card">
                                         <h3 class="card__heading">
                                             JavaScript
-                                            <span class="small-word"
-                                                >(front)</span
-                                            >
+                                            <span class="small-word">(front)</span>
                                         </h3>
                                         <div class="card__pie">
                                             <div class="pie pie--javascript">
@@ -170,8 +168,8 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                             <div class="card__detail">
                                                 <h4>概要</h4>
                                                 <p class="card__paragraph">
-                                                    HTML5+SCSSを用いたレスポンシブな静的サイトの構築。<br />
-                                                    フロントエンドにjQueryを用いたMPA、React+ReduxによるSPAの構築。
+                                                    React+ReduxによるSPAの構築。フロントエンドにjQueryを用いたMPA<br />
+                                                    HTML5+SCSSを用いたレスポンシブな静的サイトの構築。
                                                 </p>
                                             </div>
                                             <div class="card__keywords">
@@ -231,15 +229,13 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                                 <h4>概要</h4>
                                                 <p class="card__paragraph">
                                                     認証機能付きのフルスタックフレームワークによるWebアプリケーションや
-                                                    REST APIの構築。
+                                                    REST APIの構築。Webセキュリティの基礎知識。
                                                 </p>
                                             </div>
                                             <div class="card__keywords">
                                                 <h4>キーワード</h4>
                                                 <p class="card__paragraph">
-                                                    フレームワーク：Revel /
-                                                    Gin<br />
-                                                    ORM：gorm
+                                                    フレームワーク：Revel / Gin<br />
                                                 </p>
                                             </div>
                                         </div>
@@ -416,7 +412,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                             <div class="card__detail">
                                                 <h4>概要</h4>
                                                 <p class="card__paragraph">
-                                                    Webセキュリティ、マルチブラウザ対応、デザインなどなどに関して鋭意学習中。
+                                                    Kotlin, デザイン、フロント高速化などに関して鋭意学習中。
                                                 </p>
                                             </div>
                                             <div class="card__keywords"></div>
@@ -626,6 +622,23 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                     </p>
                                 </div>
                             </li>
+                            <li class="works-container__item">
+                                <div class="works-container__date">
+                                    2019年1⽉
+                                </div>
+                                <div class="works-container__description">
+                                    <h3 class="works-container__heading">
+                                        <a
+                                            href="https://blog.kgjoi.com"
+                                        >
+                                            H. Muraoka's Blog
+                                        </a>
+                                    </h3>
+                                    <p class="works-container__paragraph">
+                                        Gatsby(React)を利用したブログ。インフラはNetlifyに丸投げ。
+                                    </p>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </section>
@@ -691,8 +704,13 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                 <div class="socials-container__icons">
                                     <ul class="social-links">
                                         <li class="social-links__item">
-                                            <a class="social-links__link social-links__link--facebook" href="https://www.facebook.com/h.muraoka714">
-                                                <i class="icon ion-logo-facebook"></i>
+                                            <a class="social-links__link social-links__link--github" href="https://github.com/company1101">
+                                                <i class="icon ion-logo-github"></i>
+                                            </a>
+                                        </li>
+                                        <li class="social-links__item">
+                                            <a class="social-links__link social-links__link--kaggle" href="https://github.com/company1101">
+                                                <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Kaggle icon</title><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/></svg>
                                             </a>
                                         </li>
                                         <li class="social-links__item">

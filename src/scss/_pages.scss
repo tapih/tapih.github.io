@@ -29,12 +29,10 @@
     $desc-box-margin-hori: calc(#{$desc-box-margin-right}+#{$desc-box-margin-left});
     $img-box-width-pct: 0.4;
     $img-box-slant-pct: 0.3;
-
     /* TODO: boxの左上斜めカットをborderで作成しており、幅、高さを%指定できないので計算して設定 */
     $img-box-height: calc(#{$section-height} - 32.5rem); // 32.5remはセクション見出しの大きさと上下余白の合計
     $img-box-width: calc((100vw - #{$desc-box-margin-hori}) * #{$img-box-width-pct});
     $border-left-thickness: calc(#{$img-box-width} * #{$img-box-slant-pct});
-
     flex: 1;
     display: flex;
     width: 100%;
@@ -81,7 +79,6 @@
             margin-bottom: 0;
         }
     }
-
     &__img-box {
         width: $img-box-width;
         height: $img-box-height;
@@ -173,64 +170,74 @@
             margin-bottom: 1.5rem;
         }
         .pie {
+            $javascript-pct: 60;
+            $python-pct: 80;
+            $go-pct: 60;
+            $sql-pct: 50;
+            $debian-pct: 40;
+            $nodejs-pct: 30;
+            $r-pct: 40;
+            $excel-pct: 90;
+            $c-pct: 30;
+            $others-pct: 10;
             &--javascript[data-animated] {
-                @include makePie(60, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($javascript-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(60, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($javascript-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--python[data-animated] {
-                @include makePie(80, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($python-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(80, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($python-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--go[data-animated] {
-                @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($go-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($go-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--sql[data-animated] {
-                @include makePie(50, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($sql-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(50, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($sql-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--debian[data-animated] {
-                @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($debian-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($debian-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--nodejs[data-animated] {
-                @include makePie(30, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($nodejs-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($nodejs-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--r[data-animated] {
-                @include makePie(40, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($r-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(40, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($r-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--excel[data-animated] {
-                @include makePie(90, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($excel-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(90, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($excel-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--c[data-animated] {
-                @include makePie(30, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($c-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(30, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($c-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--others[data-animated] {
-                @include makePie(10, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include makePie($others-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
-                    @include makePie(10, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                    @include makePie($others-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
         }
@@ -440,6 +447,17 @@
         }
         &--github:hover {
             color: #181717;
+        }
+        &--kaggle {
+            &>svg {
+                fill: $color-tertiary;
+                width: 2.3rem;
+            }
+            &:hover {
+                &>svg {
+                    fill: #1bc0ff;
+                }
+            }
         }
     }
 }
