@@ -136,7 +136,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                     Learning等の機械学習モデルの構築(PyTorch/Keras/scikit-learn+pandas/numpy)、
                                     レスポンシブな静的ページ作成(HTML5+CSS3+jQuery)、
                                     フルスタックフレームワークを利用したウェブサービスの作成(Revel)、
-                                    REST APIの作成(Gin/Node.js)など。
+                                    REST APIの作成(Gin/Node.js)など。<br />
                                     趣味はお酒と旅行と動物。
                                 </p>
                             </div>
@@ -412,7 +412,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                             <div class="card__detail">
                                                 <h4>概要</h4>
                                                 <p class="card__paragraph">
-                                                    Kotlin, デザイン、フロント高速化などに関して鋭意学習中。
+                                                    Kotlin、デザイン、フロント高速化などに関して鋭意学習中。
                                                 </p>
                                             </div>
                                             <div class="card__keywords"></div>
