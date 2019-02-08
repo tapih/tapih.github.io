@@ -1,48 +1,48 @@
 .small-word {
-    font-size: 70%;
+  font-size: 70%;
 }
 
 .section-heading {
-    position: relative;
-    width: 10rem;
-    height: 6.5rem;
-    margin: 0 auto;
-    margin-bottom: 8rem;
-    font-size: 3.2rem;
-    text-align: center;
-    text-transform: uppercase;
-    @include respond(phone) {
-        height: 4rem;
-        margin-bottom: 4rem;
-        font-size: 2.2rem;
-    }
-    &::after {
-        display: block;
-        position: absolute;
-        left: 50%;
-        bottom: 0rem;
-        height: 4px;
-        width: 4rem;
-        background-color: $color-primary;
-        transform: translateX(-50%);
-        content: '';
-    }
-    &--white {
-        color: white;
-        letter-spacing: 2px;
-    }
+  position: relative;
+  width: 10rem;
+  height: 6.5rem;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+  font-size: 3.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  @include respond(phone) {
+    height: 4rem;
+    margin-bottom: 4rem;
+    font-size: 2.2rem;
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0rem;
+    height: 4px;
+    width: 4rem;
+    background-color: $color-primary;
+    transform: translateX(-50%);
+    content: '';
+  }
+  &--white {
+    color: white;
+    letter-spacing: 2px;
+  }
 }
 
 .footer-heading {
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    @include respond(phone) {
-        margin-bottom: 2rem;
-        font-size: 2rem;
-        line-height: 2.4rem;
-    }
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  @include respond(phone) {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
 }
 
 $hamburger-color: white;
@@ -52,466 +52,491 @@ $hamburger-height: 21px;
 $hamburger-thickness: 2px;
 $hamburger-transition-y: $hamburger-height / 2 - $hamburger-thickness / 2;
 .hamburger {
-    position: relative;
+  position: relative;
+  width: $hamburger-width;
+  height: $hamburger-height;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  & > span {
+    position: absolute;
+    height: $hamburger-thickness;
     width: $hamburger-width;
-    height: $hamburger-height;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
-    &>span {
-        position: absolute;
-        height: $hamburger-thickness;
-        width: $hamburger-width;
-        background-color: $hamburger-color;
-        border-radius: 3px;
-        transition: all 0.2s;
-        &:nth-child(1) {
-            top: 0;
-        }
-        &:nth-child(2) {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        &:nth-child(3) {
-            bottom: 0;
-        }
+    background-color: $hamburger-color;
+    border-radius: 3px;
+    transition: all 0.2s;
+    &:nth-child(1) {
+      top: 0;
     }
-    &--open {
-        &>span {
-            &:nth-child(1) {
-                background-color: $hamburger-color-open;
-                transform: translateY($hamburger-transition-y) rotate(315deg);
-            }
-            &:nth-child(2) {
-                opacity: 0;
-            }
-            &:nth-child(3) {
-                background-color: $hamburger-color-open;
-                transform: translateY(-$hamburger-transition-y) rotate(-315deg);
-            }
-        }
+    &:nth-child(2) {
+      top: 50%;
+      transform: translateY(-50%);
     }
+    &:nth-child(3) {
+      bottom: 0;
+    }
+  }
+  &--open {
+    & > span {
+      &:nth-child(1) {
+        background-color: $hamburger-color-open;
+        transform: translateY($hamburger-transition-y) rotate(315deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        background-color: $hamburger-color-open;
+        transform: translateY(-$hamburger-transition-y) rotate(-315deg);
+      }
+    }
+  }
 }
 
 .btn {
-    &,
-    &:link,
-    &:visited {
-        display: block;
-        position: relative;
-        z-index: 0;
-        padding: 1.5rem 3rem;
-        border: 3px solid white;
-        border-radius: 1px;
-        box-shadow: 0 2px 8px 0 rgba(black, 0.2);
-        background-color: transparent;
-        color: white;
-        text-decoration: none;
-        outline: none;
-        cursor: pointer;
-        transition: all 0.2s;
-        @include respond(phone) {
-            padding: 1.5rem 2rem;
-        }
+  &,
+  &:link,
+  &:visited {
+    display: block;
+    position: relative;
+    z-index: 0;
+    padding: 1.5rem 3rem;
+    border: 3px solid white;
+    border-radius: 1px;
+    box-shadow: 0 2px 8px 0 rgba(black, 0.2);
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    @include respond(phone) {
+      padding: 1.5rem 2rem;
     }
+  }
+  &:hover {
+    border: 3px solid $color-primary-dark;
+    box-shadow: 0 3px 12px 0 rgba(black, 0.2);
+    color: white;
+    transform: translateY(-2px);
+  }
+  &:active {
+    box-shadow: 0 1px 4px 0 rgba(black, 0.2);
+    transform: translateY(1px);
+  }
+  &::after,
+  &:link::after,
+  &:visited::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    background-color: $color-primary-dark;
+    transition: transform 0.2s;
+    content: '';
+  }
+  &:hover::after,
+  &:active::after {
+    transform: scaleX(1);
+  }
+  &--filled {
+    background-color: $color-primary-dark;
+    border: 3px solid $color-primary-dark;
     &:hover {
-        border: 3px solid $color-primary-dark;
-        box-shadow: 0 3px 12px 0 rgba(black, 0.2);
-        color: white;
-        transform: translateY(-2px);
+      box-shadow: 0 2px 8px 0 rgba(black, 0.2);
+      transform: translateY(0);
     }
-    &:active {
-        box-shadow: 0 1px 4px 0 rgba(black, 0.2);
-        transform: translateY(1px);
-    }
-    &::after,
-    &:link::after,
-    &:visited::after {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        transform: scaleX(0);
-        background-color: $color-primary-dark;
-        transition: transform 0.2s;
-        content: '';
-    }
-    &:hover::after,
-    &:active::after {
-        transform: scaleX(1);
-    }
-    &--filled {
-        background-color: $color-primary-dark;
-        border: 3px solid $color-primary-dark;
-        &:hover {
-            box-shadow: 0 2px 8px 0 rgba(black, 0.2);
-            transform: translateY(0);
-        }
-    }
+  }
 }
 
 .square-arrow-up {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    z-index: $z-highest;
-    border: 1px solid $color-primary-dark;
-    box-shadow: 0 1px 4px 0 rgba(black, 0.1);
-    background-color: transparent;
-    transition: all 0.2s;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: $z-highest;
+  border: 1px solid $color-primary-dark;
+  box-shadow: 0 1px 4px 0 rgba(black, 0.1);
+  background-color: transparent;
+  transition: all 0.2s;
+  @include respond(phone) {
+    width: 30px;
+    height: 30px;
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    right: 50%;
+    width: 10px;
+    height: 1px;
+    background-color: $color-primary-dark;
+    transform: rotate(-45deg) translateY(2px);
+    content: '';
     @include respond(phone) {
-        width: 30px;
-        height: 30px;
+      width: 8px;
     }
+  }
+  &::before {
+    display: block;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 1px;
+    background-color: $color-primary-dark;
+    transform: rotate(45deg) translateY(2px);
+    content: '';
+    @include respond(phone) {
+      width: 8px;
+    }
+  }
+  &:hover {
+    background-color: $color-primary-dark;
+    transform: translateY(-2px);
     &::after {
-        display: block;
-        position: absolute;
-        bottom: 50%;
-        right: 50%;
-        width: 10px;
-        height: 1px;
-        background-color: $color-primary-dark;
-        transform: rotate(-45deg) translateY(2px);
-        content: '';
-        @include respond(phone) {
-            width: 8px;
-        }
+      background-color: white;
     }
     &::before {
-        display: block;
-        position: absolute;
-        bottom: 50%;
-        left: 50%;
-        width: 10px;
-        height: 1px;
-        background-color: $color-primary-dark;
-        transform: rotate(45deg) translateY(2px);
-        content: '';
-        @include respond(phone) {
-            width: 8px;
-        }
+      background-color: white;
     }
-    &:hover {
-        background-color: $color-primary-dark;
-        transform: translateY(-2px);
-        &::after {
-            background-color: white;
-        }
-        &::before {
-            background-color: white;
-        }
+  }
+  &:active {
+    transform: translateY(1px);
+    background-color: transparent;
+  }
+  &:target {
+    background-color: transparent;
+    &::after {
+      background-color: $color-primary-dark;
     }
-    &:active {
-        transform: translateY(1px);
+    &::before {
+      background-color: $color-primary-dark;
     }
+  }
 }
 
 .carousel {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  &__wrapper {
+    flex: 1;
     display: flex;
-    flex-direction: column;
-    position: relative;
-    overflow: hidden;
-    &__wrapper {
-        flex: 1;
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 5rem;
-        transition: transform 0.5s ease-in-out;
-        @include respond(phone) {
-            margin-bottom: 2rem;
-        }
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    transition: transform 0.5s ease-in-out;
+    @include respond(phone) {
+      margin-bottom: 2rem;
     }
-    &__slide {
-        display: flex;
-        flex-direction: column; // NOTE: ないとieで動かない…
-        margin: 0 2rem;
-        @include respond(phone) {
-            margin: 0 .8rem;
-        }
+  }
+  &__slide {
+    display: flex;
+    flex-direction: column; // NOTE: ないとieで動かない…
+    margin: 0 2rem;
+    @include respond(phone) {
+      margin: 0 0.8rem;
     }
-    &__controls {
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        transform: translate(-50%, -50%);
-        outline: none;
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    outline: none;
+  }
+  &__prev {
+    width: 5rem;
+    height: 5rem;
+    border-right: 2.5rem solid $color-primary;
+    border-left: 2.5rem solid transparent;
+    border-top: 2.5rem solid transparent;
+    border-bottom: 2.5rem solid transparent;
+    outline: none;
+    background-color: transparent;
+    transition: opacity 0.2s;
+    opacity: 0.8;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
     }
-    &__prev {
-        width: 5rem;
-        height: 5rem;
-        border-right: 2.5rem solid $color-primary;
-        border-left: 2.5rem solid transparent;
-        border-top: 2.5rem solid transparent;
-        border-bottom: 2.5rem solid transparent;
-        outline: none;
-        background-color: transparent;
-        transition: opacity 0.2s;
-        opacity: 0.8;
-        cursor: pointer;
-        &:hover {
-            opacity: 1;
-        }
-        &--disabled {
-            opacity: 0;
-            &:hover {
-                opacity: 0;
-            }
-        }
-        @include respond(phone) {
-            width: 3rem;
-            height: 3rem;
-            border-right: 1.5rem solid $color-primary;
-            border-left: 1.5rem solid transparent;
-            border-top: 1.5rem solid transparent;
-            border-bottom: 1.5rem solid transparent;
-        }
+    &--disabled {
+      opacity: 0;
+      &:hover {
+        opacity: 0;
+      }
     }
-    &__next {
-        width: 5rem;
-        height: 5rem;
-        border-right: 2.5rem solid transparent;
-        border-left: 2.5rem solid $color-primary;
-        border-top: 2.5rem solid transparent;
-        border-bottom: 2.5rem solid transparent;
-        outline: none;
-        background-color: transparent;
-        transition: opacity 0.2s;
-        opacity: 0.8;
-        cursor: pointer;
-        &:hover {
-            opacity: 1;
-        }
-        &--disabled {
-            opacity: 0;
-            &:hover {
-                opacity: 0;
-            }
-        }
-        @include respond(phone) {
-            width: 3rem;
-            height: 3rem;
-            border-right: 1.5rem solid transparent;
-            border-left: 1.5rem solid $color-primary;
-            border-top: 1.5rem solid transparent;
-            border-bottom: 1.5rem solid transparent;
-        }
+    @include respond(phone) {
+      width: 3rem;
+      height: 3rem;
+      border-right: 1.5rem solid $color-primary;
+      border-left: 1.5rem solid transparent;
+      border-top: 1.5rem solid transparent;
+      border-bottom: 1.5rem solid transparent;
     }
-    &__pagination {
-        display: flex;
-        justify-content: center;
+  }
+  &__next {
+    width: 5rem;
+    height: 5rem;
+    border-right: 2.5rem solid transparent;
+    border-left: 2.5rem solid $color-primary;
+    border-top: 2.5rem solid transparent;
+    border-bottom: 2.5rem solid transparent;
+    outline: none;
+    background-color: transparent;
+    transition: opacity 0.2s;
+    opacity: 0.8;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
     }
-    &__dot {
-        width: 1rem;
-        height: 1rem;
-        margin: 0 0.5rem;
-        background-color: white;
-        opacity: 0.5;
-        &--active {
-            background-color: $color-primary;
-            opacity: 1;
-        }
-        @include respond(phone) {
-            width: .6rem;
-            height: .6rem;
-            margin: 0 0.3rem;
-        }
+    &--disabled {
+      opacity: 0;
+      &:hover {
+        opacity: 0;
+      }
     }
+    @include respond(phone) {
+      width: 3rem;
+      height: 3rem;
+      border-right: 1.5rem solid transparent;
+      border-left: 1.5rem solid $color-primary;
+      border-top: 1.5rem solid transparent;
+      border-bottom: 1.5rem solid transparent;
+    }
+  }
+  &__pagination {
+    display: flex;
+    justify-content: center;
+  }
+  &__dot {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.5rem;
+    background-color: white;
+    opacity: 0.5;
+    &--active {
+      background-color: $color-primary;
+      opacity: 1;
+    }
+    @include respond(phone) {
+      width: 0.6rem;
+      height: 0.6rem;
+      margin: 0 0.3rem;
+    }
+  }
 }
 
-@mixin makePie( $percentage, $anime-half-duration, $font-size, $outer-radius, $inner-radius, $fg-color, $bg-color) {
-    position: relative;
-    width: $outer-radius * 2;
+@mixin makePie(
+  $percentage,
+  $anime-half-duration,
+  $font-size,
+  $outer-radius,
+  $inner-radius,
+  $fg-color,
+  $bg-color
+) {
+  position: relative;
+  width: $outer-radius * 2;
+  height: $outer-radius * 2;
+  .pie__right {
+    position: absolute;
+    right: 0;
+    width: $outer-radius;
     height: $outer-radius * 2;
-    .pie__right {
-        position: absolute;
-        right: 0;
-        width: $outer-radius;
-        height: $outer-radius * 2;
-        overflow: hidden;
-        &::before {
-            display: block;
-            position: absolute;
-            right: 0;
-            width: $outer-radius * 2;
-            height: $outer-radius * 2;
-            border-radius: 50%;
-            background-image: linear-gradient( to right, $fg-color 50%, transparent 50%);
-            @include rotate-right-pie($percentage, $anime-half-duration);
-            animation-fill-mode: forwards;
-            content: '';
-        }
+    overflow: hidden;
+    &::before {
+      display: block;
+      position: absolute;
+      right: 0;
+      width: $outer-radius * 2;
+      height: $outer-radius * 2;
+      border-radius: 50%;
+      background-image: linear-gradient(
+        to right,
+        $fg-color 50%,
+        transparent 50%
+      );
+      @include rotate-right-pie($percentage, $anime-half-duration);
+      animation-fill-mode: forwards;
+      content: '';
     }
-    .pie__left {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        width: $outer-radius;
-        height: $outer-radius * 2;
-        overflow: hidden;
-        &::before {
-            display: block;
-            position: absolute;
-            left: 0;
-            width: $outer-radius * 2;
-            height: $outer-radius * 2;
-            border-radius: 50%;
-            background-image: linear-gradient( to right, transparent 50%, $fg-color 50%);
-            @include rotate-left-pie($percentage, $anime-half-duration);
-            animation-fill-mode: forwards;
-            content: '';
-        }
+  }
+  .pie__left {
+    visibility: hidden;
+    position: absolute;
+    left: 0;
+    width: $outer-radius;
+    height: $outer-radius * 2;
+    overflow: hidden;
+    &::before {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: $outer-radius * 2;
+      height: $outer-radius * 2;
+      border-radius: 50%;
+      background-image: linear-gradient(
+        to right,
+        transparent 50%,
+        $fg-color 50%
+      );
+      @include rotate-left-pie($percentage, $anime-half-duration);
+      animation-fill-mode: forwards;
+      content: '';
     }
-    .pie__center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: $outer-radius;
-        left: $outer-radius;
-        width: $inner-radius * 2;
-        height: $inner-radius * 2;
-        border-radius: 50%;
-        background-color: $bg-color;
-        transform: translate(-50%, -50%);
-        &::before {
-            display: block;
-            font-size: $font-size;
-            font-weight: 700;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: slideIn $anime-half-duration;
-            animation-delay: $anime-half-duration;
-            animation-fill-mode: forwards;
-            content: '#{$percentage}%';
-        }
-        &--disabled::before {
-            opacity: 1;
-            transform: translateY(0);
-            animation: none;
-        }
+  }
+  .pie__center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: $outer-radius;
+    left: $outer-radius;
+    width: $inner-radius * 2;
+    height: $inner-radius * 2;
+    border-radius: 50%;
+    background-color: $bg-color;
+    transform: translate(-50%, -50%);
+    &::before {
+      display: block;
+      font-size: $font-size;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: slideIn $anime-half-duration;
+      animation-delay: $anime-half-duration;
+      animation-fill-mode: forwards;
+      content: '#{$percentage}%';
     }
+    &--disabled::before {
+      opacity: 1;
+      transform: translateY(0);
+      animation: none;
+    }
+  }
 }
 
 @mixin rotate-right-pie($percentage, $half-duration) {
-    @keyframes rotate-right-pie-#{$percentage} {
-        0% {
-            transform: rotate(0);
-        }
-        100% {
-            @if $percentage>50 {
-                transform: rotate(180deg);
-            }
-            @else {
-                transform: rotate(($percentage/ 50) * 180deg);
-            }
-        }
+  @keyframes rotate-right-pie-#{$percentage} {
+    0% {
+      transform: rotate(0);
     }
-    animation: rotate-right-pie-#{$percentage} $half-duration ease-in;
+    100% {
+      @if $percentage>50 {
+        transform: rotate(180deg);
+      } @else {
+        transform: rotate(($percentage/ 50) * 180deg);
+      }
+    }
+  }
+  animation: rotate-right-pie-#{$percentage} $half-duration ease-in;
 }
 
 @mixin rotate-left-pie($percentage, $half-duration) {
-    @keyframes rotate-left-pie-#{$percentage} {
-        0% {
-            @if $percentage>50 {
-                transform: rotate(0);
-            }
-        }
-        100% {
-            @if $percentage>50 {
-                visibility: visible; // animationできない
-                transform: rotate(($percentage - 50)/50 * 180deg);
-            }
-        }
+  @keyframes rotate-left-pie-#{$percentage} {
+    0% {
+      @if $percentage>50 {
+        transform: rotate(0);
+      }
     }
-    animation: rotate-left-pie-#{$percentage} $half-duration ease-out $half-duration;
+    100% {
+      @if $percentage>50 {
+        visibility: visible; // animationできない
+        transform: rotate(($percentage - 50)/50 * 180deg);
+      }
+    }
+  }
+  animation: rotate-left-pie-#{$percentage} $half-duration ease-out $half-duration;
 }
 
 @keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modal {
-    display: none;
-    &__outer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: $z-highest;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(black, 0.7);
+  display: none;
+  &__outer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-highest;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(black, 0.7);
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    padding: 8rem 0;
+    background-color: white;
+    transform: translate(-50%, -50%);
+    @include respond(tab-port) {
+      width: 80%;
     }
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 50%;
-        padding: 8rem 0;
-        background-color: white;
-        transform: translate(-50%, -50%);
-        @include respond(tab-port) {
-            width: 80%;
-        }
+  }
+  &__state {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 0 auto;
+    &--after {
+      display: none;
     }
-    &__state {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        width: 80%;
-        margin: 0 auto;
-        &--after {
-            display: none;
-        }
+  }
+  &__btns {
+    margin-bottom: 1rem;
+  }
+  &__btn {
+    margin: 0 0.5rem;
+    padding: 1rem 2.4rem;
+    border: 3px solid $color-primary;
+    outline: none;
+    &--submit {
+      background-color: $color-primary;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        border: 3px solid $color-primary-dark;
+        background-color: $color-primary-dark;
+      }
     }
-    &__btns {
-        margin-bottom: 1rem;
+    &--cancel {
+      background-color: white;
+      color: $color-primary-dark;
+      cursor: pointer;
+      &:hover,
+      &:active {
+        border: 3px solid $color-primary-dark;
+        background-color: $color-primary-dark;
+        color: white;
+      }
     }
-    &__btn {
-        margin: 0 0.5rem;
-        padding: 1rem 2.4rem;
-        border: 3px solid $color-primary;
-        outline: none;
-        &--submit {
-            background-color: $color-primary;
-            color: white;
-            cursor: pointer;
-            &:hover {
-                border: 3px solid $color-primary-dark;
-                background-color: $color-primary-dark;
-            }
-        }
-        &--cancel {
-            background-color: white;
-            color: $color-primary-dark;
-            cursor: pointer;
-            &:hover,
-            &:active {
-                border: 3px solid $color-primary-dark;
-                background-color: $color-primary-dark;
-                color: white;
-            }
-        }
-    }
+  }
 }
 
 // https://codepen.io/scottloway/pen/zqoLyQ
@@ -525,144 +550,144 @@ $x-height: $loader-size * 0.6;
 $x-width: $check-thickness;
 $x-color: $color-secondary;
 .spinner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    &__outer {
-        position: relative;
-        width: $loader-size;
-        height: $loader-size;
-        margin-bottom: 5rem;
-        border: 1px solid rgba(0, 0, 0, 0.2);
-        border-left-color: $check-color;
-        border-radius: 50%;
-        animation: loader-spin 1.2s infinite linear;
-        &--success {
-            border-color: $check-color;
-            transition: border 0.5s ease-out;
-            animation: none;
-        }
-        &--failed {
-            border-color: $x-color;
-            transition: border 0.5s ease-out;
-            animation: none;
-        }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__outer {
+    position: relative;
+    width: $loader-size;
+    height: $loader-size;
+    margin-bottom: 5rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-left-color: $check-color;
+    border-radius: 50%;
+    animation: loader-spin 1.2s infinite linear;
+    &--success {
+      border-color: $check-color;
+      transition: border 0.5s ease-out;
+      animation: none;
     }
-    &__draw {
-        &--success {
-            opacity: 1;
-            position: absolute;
-            left: $check-left;
-            top: $check-height;
-            height: $check-height;
-            width: $check-width;
-            border-right: $check-thickness solid $check-color;
-            border-top: $check-thickness solid $check-color;
-            transform: scaleX(-1) rotate(135deg);
-            transform-origin: left top;
-            animation: checkmark 0.8s ease-in-out;
-            content: '';
-        }
-        &--failed {
-            &:before {
-                display: block;
-                opacity: 1;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                height: $x-height;
-                width: $x-width;
-                background-color: $x-color;
-                transform: translate(-50%, -50%) rotate(45deg);
-                animation: xmark 0.8s ease;
-                content: '';
-            }
-            &:after {
-                display: block;
-                opacity: 1;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                height: $x-height;
-                width: $x-width;
-                background-color: $x-color;
-                transform: translate(-50%, -50%) rotate(-45deg);
-                animation: xmark 0.8s ease;
-                content: '';
-            }
-        }
+    &--failed {
+      border-color: $x-color;
+      transition: border 0.5s ease-out;
+      animation: none;
     }
-    @keyframes loader-spin {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
+  }
+  &__draw {
+    &--success {
+      opacity: 1;
+      position: absolute;
+      left: $check-left;
+      top: $check-height;
+      height: $check-height;
+      width: $check-width;
+      border-right: $check-thickness solid $check-color;
+      border-top: $check-thickness solid $check-color;
+      transform: scaleX(-1) rotate(135deg);
+      transform-origin: left top;
+      animation: checkmark 0.8s ease-in-out;
+      content: '';
     }
-    @keyframes checkmark {
-        0% {
-            height: 0;
-            width: 0;
-            opacity: 1;
-        }
-        20% {
-            height: 0;
-            width: $check-width;
-            opacity: 1;
-        }
-        40% {
-            height: $check-height;
-            width: $check-width;
-            opacity: 1;
-        }
-        100% {
-            height: $check-height;
-            width: $check-width;
-            opacity: 1;
-        }
+    &--failed {
+      &:before {
+        display: block;
+        opacity: 1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: $x-height;
+        width: $x-width;
+        background-color: $x-color;
+        transform: translate(-50%, -50%) rotate(45deg);
+        animation: xmark 0.8s ease;
+        content: '';
+      }
+      &:after {
+        display: block;
+        opacity: 1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: $x-height;
+        width: $x-width;
+        background-color: $x-color;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        animation: xmark 0.8s ease;
+        content: '';
+      }
     }
-    @keyframes xmark {
-        0% {
-            height: 0;
-        }
-        100% {
-            height: $x-height;
-        }
+  }
+  @keyframes loader-spin {
+    0% {
+      transform: rotate(0deg);
     }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes checkmark {
+    0% {
+      height: 0;
+      width: 0;
+      opacity: 1;
+    }
+    20% {
+      height: 0;
+      width: $check-width;
+      opacity: 1;
+    }
+    40% {
+      height: $check-height;
+      width: $check-width;
+      opacity: 1;
+    }
+    100% {
+      height: $check-height;
+      width: $check-width;
+      opacity: 1;
+    }
+  }
+  @keyframes xmark {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: $x-height;
+    }
+  }
 }
 
 .contact-form {
-    color: white;
+  color: white;
+  width: 100%;
+  &__input,
+  &__textarea {
     width: 100%;
-    &__input,
-    &__textarea {
-        width: 100%;
-        margin-bottom: 2rem;
-        padding: 0.8rem 1.5rem;
-        border: 2px solid white;
-        border-radius: 0;
-        background-color: transparent;
-        color: inherit;
-        outline: none;
-        resize: none;
-        &:focus {
-            border: 2px solid $color-primary;
-        }
+    margin-bottom: 2rem;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 0;
+    background-color: transparent;
+    color: inherit;
+    outline: none;
+    resize: none;
+    &:focus {
+      border: 2px solid $color-primary;
     }
-    &__textarea {
-        height: 30rem;
-        color: inherit;
-        overflow: auto;
+  }
+  &__textarea {
+    height: 30rem;
+    color: inherit;
+    overflow: auto;
+  }
+  &__btn {
+    margin-right: 1rem;
+    border-width: 2px;
+    padding: 1.5rem 2.5rem;
+    &:hover,
+    &:active {
+      border-width: 2px;
     }
-    &__btn {
-        margin-right: 1rem;
-        border-width: 2px;
-        padding: 1.5rem 2.5rem;
-        &:hover,
-        &:active {
-            border-width: 2px;
-        }
-    }
+  }
 }
