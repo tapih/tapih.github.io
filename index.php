@@ -20,8 +20,8 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
         <!-- meta -->
         <title>Hiroshi Muraoka</title>
 
-        <meta name="description" content="H. Muraoka's Portfolio Site" />
-        <meta name="keywords" content="golang, javascript, python, AI, web" />
+        <meta name="description" content="滋賀県在住のソフトウェアエンジニアのポートフォリオサイト" />
+        <meta name="keywords" content="京都, 大阪, エンジニア, 人工知能, ウェブ開発" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <!-- favicon -->
         <link
