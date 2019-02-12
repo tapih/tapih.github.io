@@ -229,7 +229,7 @@
                     @include makePie($excel-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
-            &--c[data-animated] {
+            &--ocaml[data-animated] {
                 @include makePie($c-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
                     @include makePie($ocaml-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
