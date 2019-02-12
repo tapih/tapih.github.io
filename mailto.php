@@ -133,12 +133,12 @@ $myEmail = $config['myEmail'];
 
 // security
 if (!checkToken($_SESSION, $_POST)) {
-    sendResponseMessage(401, 'Invlalid Form token was sent');
+    sendResponseMessage(403, 'Invlalid Form token was sent');
     exit;
 }
 
 if (!checkReferer($referer)) {
-    sendResponseMessage(401, 'Form was sent from invalid referer ' . $_SERVER['HTTP_REFERER']);
+    sendResponseMessage(403, 'Form was sent from invalid referer ' . $_SERVER['HTTP_REFERER']);
     exit;
 }
 
@@ -166,18 +166,18 @@ if (count($validationError) > 0) {
         $valMessage = $valMessage . $k . ': ' . $v . ' ';
     }
     $valMessage = trim($valMessage);
-    sendResponse(422, $valMessage);
+    sendResponse(400, $valMessage);
     exit;
 }
 
 // // send mail
 if (mailToMe($addressFromServer, $name, $email, $message, $myEmail) !== '') {
-    sendResponse(501, 'Failed to send email to admin');
+    sendResponse(500, 'Failed to send email to admin');
     exit;
 }
 
 if (mailToSender($addressFromServer, $name, $email, $message) !== '') {
-    sendResponse(501, 'Failed to send confirmation email to you');
+    sendResponse(500, 'Failed to send confirmation email to you');
     exit;
 }
 

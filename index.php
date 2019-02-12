@@ -661,7 +661,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                         </a>
                                     </h3>
                                     <p class="works-container__paragraph">
-                                        Gatsby(React)を利用したブログ。インフラはNetlifyに丸投げ。<br/>
+                                        Gatsby(React)を利用したブログ。インフラはNetlifyに丸投げ。<br>
                                         既存のCSSフレームワークを上書きしているので、気が向いたら直したい。
                                     </p>
                                 </div>
@@ -679,7 +679,8 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                         </a>
                                     </h3>
                                     <p class="works-container__paragraph">
-                                    共同生活者向けの家計共有アプリ。フロントエンドにTypeScript+React+Redux+antd(UIフレームワーク)、バックエンドにGo(Gin)+PostgresSQLを利用。<br/>
+                                    共同生活者向けの家計共有アプリ。<br>
+                                    フロントエンドにTypeScript+React+Redux+antd(UIフレームワーク)、バックエンドにGo(Gin)+PostgresSQLを利用。<br>
                                     現在鋭意開発中。モバイル対応後にリリース予定。
                                     </p>
                                 </div>
@@ -732,14 +733,9 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                     Thank you for visiting my page !!!
                                 </h3>
                                 <p class="message-container__paragraph">
-                                    当ホームページをご覧いただきありがとうございます。<br>
-                                    現在、私は大阪・京都で就職活動中です。
-                                    データ分析の分野でのプログラミングの経験が豊富で、
-                                    フロントエンド・バックエンドの基礎(HTML5/CSS3/JS/Go)を習得しています。<br>
-                                    また、新しい技術を継続して学習する意欲があり、
-                                    実務でのWebアプリケーション開発の経験はないものの、
-                                    いち早く戦力としてキャッチアップできると自負しております。<br>
-                                    ご検討のほど、何卒よろしくお願いいたします。
+                                継続して自ら学習できることが一番の強みであり、様々な分野の技術・知識を身に着けてきました。
+                                実務でのWebアプリケーション開発経験はありませんが、プログラミング経験がありアルゴリズム等に関する知識があるため、エンジニアとしての基礎体力があります。
+                                一戦力として素早くキャッチアップし、貴社の益々の発展に寄与できるよう努めてまいりますのでご検討のほどよろしくお願いいたします。
                                 </p>
                             </div>
                             <div class="socials-container">
@@ -754,7 +750,12 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                             </a>
                                         </li>
                                         <li class="social-links__item">
-                                            <a class="social-links__link social-links__link--kaggle" href="https://github.com/company1101">
+                                            <a class="social-links__link social-links__link--bucket" href="https://bitbucket.org/company1101/">
+                                                <i class="icon ion-logo-bitbucket"></i>
+                                            </a>
+                                        </li>
+                                        <li class="social-links__item">
+                                            <a class="social-links__link social-links__link--kaggle" href="https://www.kaggle.com/pseprop">
                                                 <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Kaggle icon</title><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.358"/></svg>
                                             </a>
                                         </li>

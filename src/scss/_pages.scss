@@ -455,6 +455,9 @@
         &--github:hover {
             color: #181717;
         }
+        &--bucket:hover {
+            color: #205081;
+        }
         &--kaggle {
             &>svg {
                 fill: $color-tertiary;
