@@ -170,15 +170,16 @@
             margin-bottom: 1.5rem;
         }
         .pie {
-            $javascript-pct: 60;
             $python-pct: 80;
-            $go-pct: 60;
+            $go-pct: 70;
+            $javascript-pct: 60;
             $sql-pct: 50;
             $debian-pct: 40;
             $nodejs-pct: 30;
             $r-pct: 40;
             $excel-pct: 90;
             $c-pct: 30;
+            $ocaml-pct: 10;
             $others-pct: 10;
             &--javascript[data-animated] {
                 @include makePie($javascript-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
@@ -226,6 +227,12 @@
                 @include makePie($excel-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
                 @include respond(phone) {
                     @include makePie($excel-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
+                }
+            }
+            &--c[data-animated] {
+                @include makePie($c-pct, 1s, 3.8rem, 8rem, 5rem, $color-primary, white);
+                @include respond(phone) {
+                    @include makePie($ocaml-pct, 1s, 2.5rem, 5rem, 3rem, $color-primary, white);
                 }
             }
             &--c[data-animated] {

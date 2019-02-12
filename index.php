@@ -153,38 +153,6 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                             <div class="carousel__wrapper">
                                 <div class="carousel__slide">
                                     <div class="card">
-                                        <h3 class="card__heading">
-                                            JavaScript
-                                            <span class="small-word">(front)</span>
-                                        </h3>
-                                        <div class="card__pie">
-                                            <div class="pie pie--javascript">
-                                                <div class="pie__right"></div>
-                                                <div class="pie__left"></div>
-                                                <div class="pie__center"></div>
-                                            </div>
-                                        </div>
-                                        <div class="card__description">
-                                            <div class="card__detail">
-                                                <h4>概要</h4>
-                                                <p class="card__paragraph">
-                                                    React+ReduxによるSPAの構築。フロントエンドにjQueryを用いたMPA<br />
-                                                    HTML5+SCSSを用いたレスポンシブな静的サイトの構築。
-                                                </p>
-                                            </div>
-                                            <div class="card__keywords">
-                                                <h4>キーワード</h4>
-                                                <p class="card__paragraph">
-                                                    View関連：JQuery / HTML5 / SCSS / React+Redux<br />
-                                                    バージョン：ES5 / ES6 / TypeScript<br />
-                                                    開発ツール：npm / webpack / eslint / tslint / prettier
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="carousel__slide">
-                                    <div class="card">
                                         <h3 class="card__heading">Python</h3>
                                         <div class="card__pie">
                                             <div class="pie pie--python">
@@ -244,6 +212,38 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                 <div class="carousel__slide">
                                     <div class="card">
                                         <h3 class="card__heading">
+                                            JavaScript
+                                            <span class="small-word">(front)</span>
+                                        </h3>
+                                        <div class="card__pie">
+                                            <div class="pie pie--javascript">
+                                                <div class="pie__right"></div>
+                                                <div class="pie__left"></div>
+                                                <div class="pie__center"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card__description">
+                                            <div class="card__detail">
+                                                <h4>概要</h4>
+                                                <p class="card__paragraph">
+                                                    React+ReduxによるSPAの構築。
+                                                    HTML5+SCSS+jQueryを用いたレスポンシブな静的サイトの構築。
+                                                </p>
+                                            </div>
+                                            <div class="card__keywords">
+                                                <h4>キーワード</h4>
+                                                <p class="card__paragraph">
+                                                    View関連：JQuery / HTML5 / SCSS / React+Redux<br />
+                                                    バージョン：ES5 / ES6 / TypeScript<br />
+                                                    開発ツール：npm / webpack / eslint / tslint / prettier
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel__slide">
+                                    <div class="card">
+                                        <h3 class="card__heading">
                                             PostgreSQL
                                         </h3>
                                         <div class="card__pie">
@@ -259,7 +259,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                                 <p class="card__paragraph">
                                                     CRUD、GROUP
                                                     BY、JOIN、相関サブクエリ、トランザクション等、基本的なコマンドを利用可。<br />
-                                                    SQLのアルゴリズムの理解。個人利用以外での設計・経験はなし。
+                                                    SQLのアルゴリズムの理解。個人利用レベルでの設計の経験。
                                                 </p>
                                             </div>
                                             <div class="card__keywords"></div>
@@ -346,6 +346,32 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                                 </p>
                                             </div>
                                             <div class="card__keywords"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel__slide">
+                                    <div class="card">
+                                        <h3 class="card__heading">OCaml</h3>
+                                        <div class="card__pie">
+                                            <div class="pie pie--ocaml">
+                                                <div class="pie__right"></div>
+                                                <div class="pie__left"></div>
+                                                <div class="pie__center"></div>
+                                            </div>
+                                        </div>
+                                        <div class="card__description">
+                                            <div class="card__detail">
+                                                <h4>概要</h4>
+                                                <p class="card__paragraph">
+                                                関数型プログラミングの学習のため使用。ダイクストラ法による経路探索アルゴリズムの構築。
+                                                </p>
+                                            </div>
+                                            <div class="card__keywords">
+                                                <h4>キーワード</h4>
+                                                <p class="card__paragraph">
+                                                関数型言語
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -631,11 +657,30 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                         <a
                                             href="https://blog.kgjoi.com"
                                         >
-                                            H. Muraoka's Blog
+                                            Blog - H. Muraoka's Blog
                                         </a>
                                     </h3>
                                     <p class="works-container__paragraph">
-                                        Gatsby(React)を利用したブログ。インフラはNetlifyに丸投げ。
+                                        Gatsby(React)を利用したブログ。インフラはNetlifyに丸投げ。<br/>
+                                        既存のCSSフレームワークを上書きしているので、気が向いたら直したい。
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="works-container__item">
+                                <div class="works-container__date">
+                                    2019年2⽉
+                                </div>
+                                <div class="works-container__description">
+                                    <h3 class="works-container__heading">
+                                        <a
+                                            href="https://engel.kgjoi.com"
+                                        >
+                                            Engel - Household Account Sharing App
+                                        </a>
+                                    </h3>
+                                    <p class="works-container__paragraph">
+                                    共同生活者向けの家計共有アプリ。フロントエンドにTypeScript+React+Redux+antd(UIフレームワーク)、バックエンドにGo(Gin)+PostgresSQLを利用。<br/>
+                                    現在鋭意開発中。モバイル対応後にリリース予定。
                                     </p>
                                 </div>
                             </li>
