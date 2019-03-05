@@ -41,13 +41,14 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
             sizes="16x16"
             href="/img/favicon/favicon-16x16.png"
         />
-        <link rel="manifest" href="/img/favicon/site.webmanifest" />
         <link
             rel="mask-icon"
             href="/img/favicon/safari-pinned-tab.svg"
             color="#5bbad5"
         />
-        <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
+        <link rel="shortcut icon" href="ホームページ　画像最適化　spinner
+ホームページ　画像最適化　spinner
+/img/favicon/favicon.ico" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta
             name="msapplication-config"
@@ -61,6 +62,14 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
         />
         <link href="https://unpkg.com/ionicons@4.4.8/dist/css/ionicons.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/style.css" />
+
+        <!-- pwa -->
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="H.Muraoka" />
+        <link rel="apple-touch-icon" href="/img/favicon/mstile-150x150.png" sizes="150x150">
+        <meta name="theme-color" content="#3f51b5" />
     </head>
 
     <body>

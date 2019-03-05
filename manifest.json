@@ -1,0 +1,20 @@
+{
+  "name": "Hiroshi Muraoka",
+  "short_name": "H.Muraoka",
+  "start_url": "/index.php",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#3F51B5",
+  "description": "Software Engineer in Shiga, JAPAN",
+  "dir": "ltr",
+  "lang": "jp",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/img/favicon/mstile-150x150.png",
+      "type": "image/png",
+      "sizes": "150x150"
+    }
+  ]
+}
