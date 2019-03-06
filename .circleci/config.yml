@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.1-node-browsers
+    working_directory: ~/Projects/portofolio
+    steps:
+      - checkout
+
+      - add_ssh_keys:
+          fingerprints:
+            - "${KEY_FINGERPRINT}"
+      - run:
+          name: Start ssh-keyscan
+          command: |
+            ssh-keyscan -p ${PORT} ${HOST} >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy package to the production server
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              ssh ${USER}@${HOST} -p ${PORT} ${SCRIPT}
+            fi
