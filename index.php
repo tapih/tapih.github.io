@@ -11,16 +11,16 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131373055-1"></script>
         <script>
             var gaAcceptedField = 'ga_accepted';
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
             function enableTracking() {
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', 'UA-131373055-1');
             }
 
-            if (localStorage.getItem(gaAcceptedField)) {
-                enableTracking();
-            }
+            // if (localStorage.getItem(gaAcceptedField)) {
+            enableTracking();
+            // }
         </script>
 
         <!-- meta -->
