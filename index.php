@@ -60,11 +60,6 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
         />
         <meta name="theme-color" content="#ffffff" />
         <!-- style -->
-        <link
-            href="https://fonts.googleapis.com/css?family=Noto+Sans+JP|Roboto+Condensed:300,400,700"
-            rel="stylesheet"
-        />
-        <link href="https://unpkg.com/ionicons@4.4.8/dist/css/ionicons.min.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/style.css" />
 
         <!-- pwa -->
