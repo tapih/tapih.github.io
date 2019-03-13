@@ -10,10 +10,19 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131373055-1"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-131373055-1');
+            // var gaAcceptedField = 'ga_accepted';
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            // function enableTracking() {
+            //     gtag('js', new Date());
+            //     gtag('config', 'UA-131373055-1');
+            // }
+            gtag('js', new Date());
+            gtag('config', 'UA-131373055-1');
+
+            // if (localStorage.getItem(gaAcceptedField)) {
+            // enableTracking();
+            // }
         </script>
 
         <!-- meta -->
