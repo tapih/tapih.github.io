@@ -10,11 +10,17 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131373055-1"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            var gaAcceptedField = 'ga_accepted';
+            function enableTracking() {
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-131373055-1');
+            }
 
-        gtag('config', 'UA-131373055-1');
+            if (localStorage.getItem(gaAcceptedField)) {
+                enableTracking();
+            }
         </script>
 
         <!-- meta -->
@@ -46,9 +52,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
             href="/img/favicon/safari-pinned-tab.svg"
             color="#5bbad5"
         />
-        <link rel="shortcut icon" href="ホームページ　画像最適化　spinner
-ホームページ　画像最適化　spinner
-/img/favicon/favicon.ico" />
+        <link rel="shortcut icon" href="/img/favicon/favicon.ico" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta
             name="msapplication-config"
@@ -107,6 +111,17 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                 </div>
             </header>
             <div><a class="square-arrow-up go-to-top" href="#hero"></a></div>
+            <div class="cookie-policy">
+                <p class="cookie-policy__text">
+                    <i class="icon ion-alert"></i>
+                    当サイトでは利便性向上や閲覧の追跡のためにGoogle提供のサービスによりCookieが使用されています。
+                    サイトの閲覧を続けた場合、Cookieの使用に同意したことになります。
+                </p>
+                <div class="cookie-policy__btn-box">
+                    <button class='btn btn--colored cookie-policy__btn--accept'>同意する</button>
+                    <button class='btn btn--white cookie-policy__btn--decline'>拒否する</button>
+                </div>
+            </div>
             <main>
                 <section id="hero">
                     <div class="hero-wrapper">
@@ -716,9 +731,9 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                     <p class="modal-container__value modal-container__value--message"></p>
                                 </li>
                             </ul>
-                            <div class="modal__btns">
-                                <button class="modal__btn modal__btn--submit">Submit</button>
-                                <button class="modal__btn modal__btn--cancel">Cancel</button>
+                            <div class="modal__btn-box">
+                                <button class="modal__btn--submit btn btn--colored">Submit</button>
+                                <button class="modal__btn--cancel btn btn--white">Cancel</button>
                             </div>
                             <p class="modal__confirmation">OK to submit?</p>
                         </div>
@@ -776,8 +791,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                     </ul>
                                 </div>
                                 <p class="socials-container__copy">
-                                    Copyrights &copy; 2018 www.kgjoi.com. All Rights
-                                    Reverved.
+                                    &copy; 2018 www.kgjoi.com. All Rights Reverved.
                                 </p>
                             </div>
                         </div>
@@ -822,7 +836,7 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                         required
                                     ></textarea>
                                 </div>
-                                <button class="contact-form__btn btn" type="submit">
+                                <button class="btn" type="submit">
                                     Confirm
                                 </button>
                             </form>
