@@ -764,12 +764,12 @@ $_SESSION['csrf_generated_at'] = $_SERVER['REQUEST_TIME'];
                                 <div class="socials-container__icons">
                                     <ul class="social-links">
                                         <li class="social-links__item">
-                                            <a class="social-links__link social-links__link--github" href="https://github.com/company1101">
+                                            <a class="social-links__link social-links__link--github" href="https://github.com/tapih">
                                                 <i class="icon ion-logo-github"></i>
                                             </a>
                                         </li>
                                         <li class="social-links__item">
-                                            <a class="social-links__link social-links__link--bucket" href="https://bitbucket.org/company1101/">
+                                            <a class="social-links__link social-links__link--bucket" href="https://bitbucket.org/tapih">
                                                 <i class="icon ion-logo-bitbucket"></i>
                                             </a>
                                         </li>
