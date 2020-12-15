@@ -1,16 +1,16 @@
 {
   "name": "img",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "js/index.js",
   "license": "MIT",
   "scripts": {
     "watch:scss": "node-sass src/scss/main.scss ./css/style.comp.css -w",
     "fmt:js": "prettier --write ./js/script.js",
     "devbundle:js": "webpack -w --mode development",
+    "devserver": "webpack-dev-server --hot --inline --open-file index.html",
     "devprefix:css": "postcss -w --use autoprefixer -b \"last 5 versions\" ./css/style.comp.css -o ./css/style.css",
-    "devserver": "php -S 127.0.0.1:8081 -t .",
-    "browsersync": "browser-sync start --proxy 127.0.0.1:8081 --files index.php css/style.css js/script.js",
-    "start": "npm run compile:scss && npm-run-all --parallel devbundle:js watch:scss devprefix:css devserver browsersync",
+    "browsersync": "browser-sync start -files index.index css/style.css js/script.js",
+    "start": "npm run compile:scss && npm-run-all --parallel devbundle:js watch:scss devprefix:css browsersync",
     "compile:scss": "node-sass src/scss/main.scss css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 5 versions\" ./css/style.comp.css -o ./css/style.prefix.css",
     "compress:css": "node-sass ./css/style.prefix.css ./css/style.css --output-style compressed",
@@ -20,12 +20,12 @@
   "devDependencies": {
     "autoprefixer": "^9.3.1",
     "browser-sync": "^2.26.3",
-    "live-server": "^1.2.1",
     "node-sass": "^4.10.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^6.0.1",
     "prettier": "^1.15.3",
     "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.11.0"
   }
 }
