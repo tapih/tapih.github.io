@@ -22,7 +22,7 @@ module.exports = {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [require("postcss-nested")]
+                plugins: ["autoprefixer"]
               }
             }
           },

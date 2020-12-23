@@ -9,6 +9,7 @@
     "build": "webpack --mode production"
   },
   "devDependencies": {
+    "autoprefixer": "^10.1.0",
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.0.1",
     "eslint": "^7.16.0",
