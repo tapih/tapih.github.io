@@ -1,31 +1,26 @@
 {
-  "name": "img",
+  "name": "portfolio",
   "version": "1.0.0",
-  "main": "js/index.js",
+  "description": "",
   "license": "MIT",
+  "author": "Hiroshi Muraoka",
   "scripts": {
-    "watch:scss": "node-sass src/scss/main.scss ./css/style.comp.css -w",
-    "fmt:js": "prettier --write ./js/script.js",
-    "devbundle:js": "webpack -w --mode development",
-    "devserver": "webpack-dev-server --hot --inline --open-file index.html",
-    "devprefix:css": "postcss -w --use autoprefixer -b \"last 5 versions\" ./css/style.comp.css -o ./css/style.css",
-    "browsersync": "browser-sync start -files index.index css/style.css js/script.js",
-    "start": "npm run compile:scss && npm-run-all --parallel devbundle:js watch:scss devprefix:css browsersync",
-    "compile:scss": "node-sass src/scss/main.scss css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b \"last 5 versions\" ./css/style.comp.css -o ./css/style.prefix.css",
-    "compress:css": "node-sass ./css/style.prefix.css ./css/style.css --output-style compressed",
-    "bundle:js": "webpack --mode production",
-    "build": "npm-run-all bundle:js compile:scss prefix:css compress:css"
+    "start": "webpack-dev-server --open",
+    "build": "webpack --mode production"
   },
   "devDependencies": {
-    "autoprefixer": "^9.3.1",
-    "browser-sync": "^2.26.3",
-    "node-sass": "^4.10.0",
-    "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.0.1",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "postcss": "^8.2.1",
+    "postcss-loader": "^4.1.0",
+    "postcss-nested": "^5.0.3",
     "prettier": "^1.15.3",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
     "webpack": "^4.26.1",
-    "webpack-cli": "^3.1.2",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   }
 }

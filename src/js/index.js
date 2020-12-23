@@ -1,3 +1,4 @@
+require('../scss/main.scss')();
 require('./disableIe.js')();
 require('./disableMobile.js')();
 require('./waypoint.js')();

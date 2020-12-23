@@ -1,9 +1,43 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  // mode: 'production',
+  mode: 'development',
   entry: './src/js/index.js',
   output: {
-    filename: 'script.js',
-    path: path.join(__dirname, 'js/')
+    filename: 'js/script.js',
+    path: path.join(__dirname, 'dist')
   },
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [require('postcss-nested')]
+              }
+            }
+          },
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.(jpg|svg)$/,
+        use: ['file-loader']
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    })
+  ]
 };
