@@ -1,48 +1,52 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-  mode: "development",
-  entry: "./src/js/index.js",
+  mode: 'development',
+  entry: './src/js/index.js',
   output: {
-    filename: "./js/script.js",
-    path: path.join(__dirname, "docs")
+    filename: 'js/script.js',
+    path: path.join(__dirname, 'docs'),
   },
   devServer: {
-    contentBase: path.resolve(__dirname, "docs")
+    contentBase: path.resolve(__dirname, 'docs'),
   },
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: [
-          "style-loader",
-          "css-loader",
+          MiniCSSExtractPlugin.loader,
+          'css-loader',
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: ["autoprefixer"]
-              }
-            }
+                plugins: ['autoprefixer'],
+              },
+            },
           },
-          "sass-loader"
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.(jpg|svg)$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "[name].[ext]",
-          outputPath: "css/img",
-          publicPath: "css/img"
-        }
-      }
-    ]
+          name: '[name].[ext]',
+          outputPath: './img',
+          publicPath: './img',
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html"
-    })
-  ]
-};
+      template: 'src/index.html',
+    }),
+    new MiniCSSExtractPlugin({
+      filename: 'css/style.css',
+    }),
+  ],
+}
