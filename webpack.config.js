@@ -5,7 +5,7 @@ module.exports = {
   mode: "development",
   entry: "./src/js/index.js",
   output: {
-    filename: "js/script.js",
+    filename: "./js/script.js",
     path: path.join(__dirname, "docs")
   },
   devServer: {
